@@ -12,7 +12,7 @@ body{
 }
 #page{
   width:1100px;
-  height:1400px;
+  height:1550px; /* Extended height for complete content */
   margin:0 auto;
   background:#fdfbf7;
   border:8px solid #ccc;
@@ -48,7 +48,7 @@ header p{
   display:grid;
   grid-template-columns:68% 29%;
   column-gap:3%;
-  height:810px;
+  height:850px; /* Increased for better content flow */
   margin-bottom:20px;
 }
 
@@ -67,18 +67,18 @@ header p{
   border-bottom:1px solid #555;
   padding-bottom:5px;
   margin-top:0;
-  margin-bottom:6px;
+  margin-bottom:8px;
 }
 .main-story h3{
   text-align:center;
   font-size:0.95rem;
   font-style:italic;
-  margin:3px 0 8px;
+  margin:3px 0 10px;
   color:#444;
 }
 .main-photo{
   width:100%;
-  height:280px;
+  height:310px; /* Slightly larger for better impact */
   border:1px solid #333;
   background:#e5e5e5 center/cover no-repeat;
   display:flex;
@@ -93,22 +93,22 @@ header p{
   font-size:0.82rem;
   font-style:italic;
   color:#555;
-  margin-bottom:8px;
+  margin-bottom:10px;
   border-bottom:1px solid #ddd;
   padding-bottom:4px;
 }
 .main-text{
-  height:440px;
+  height:450px; /* Comfortable reading height */
   text-align:justify;
-  font-size:0.96rem;
-  line-height:1.42;
+  font-size:0.98rem; /* Maintained readability */
+  line-height:1.48;
   overflow:hidden;
   box-sizing:border-box;
   columns:2;
-  column-gap:16px;
+  column-gap:18px;
 }
 .main-text p{
-  margin:0 0 10px 0;
+  margin:0 0 11px 0;
 }
 .drop-cap{
   float:left;
@@ -128,12 +128,12 @@ aside{
   gap:15px;
 }
 .highlight{
-  flex:0 0 510px;
+  flex:0 0 530px; /* Generous space for highlight content */
   overflow:hidden;
 }
 .highlight img{
   width:100%;
-  height:165px;
+  height:180px;
   border:1px solid #444;
   object-fit:cover;
   margin-bottom:8px;
@@ -141,33 +141,33 @@ aside{
 .highlight strong{
   display:block;
   margin-bottom:6px;
-  font-size:0.98rem;
-  line-height:1.25;
+  font-size:1rem;
+  line-height:1.3;
 }
 .highlight span{
   display:block;
   text-align:justify;
-  line-height:1.38;
-  font-size:0.88rem;
+  line-height:1.45;
+  font-size:0.92rem;
 }
 .inside-issue{
-  flex:0 0 270px;
+  flex:1; /* Takes remaining space naturally */
   border:2px solid #000;
   background:#f3f1ec;
-  padding:10px 12px;
+  padding:12px 15px;
   overflow:hidden;
-  font-size:0.82rem;
-  line-height:1.4;
+  font-size:0.88rem;
+  line-height:1.5;
   box-sizing:border-box;
 }
 .inside-issue strong{
   display:block;
   text-align:center;
-  margin-bottom:8px;
+  margin-bottom:10px;
   text-transform:uppercase;
   border-bottom:2px solid #000;
-  padding-bottom:5px;
-  font-size:0.92rem;
+  padding-bottom:6px;
+  font-size:0.95rem;
   letter-spacing:0.5px;
 }
 
@@ -176,29 +176,29 @@ aside{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:15px;
-  height:380px;
+  height:430px; /* Adequate space for full content */
   margin-bottom:25px;
 }
 .story-block{
   border-top:2px solid #000;
   padding-top:8px;
-  font-size:0.88rem;
-  line-height:1.38;
+  font-size:0.92rem; /* Maintained professional size */
+  line-height:1.45;
   overflow:hidden;
   box-sizing:border-box;
 }
 .story-block img{
   width:100%;
-  height:115px;
+  height:125px;
   border:1px solid #444;
   object-fit:cover;
   margin-bottom:6px;
 }
 .story-block strong{
   display:block;
-  margin-bottom:5px;
-  font-size:0.96rem;
-  line-height:1.2;
+  margin-bottom:6px;
+  font-size:1rem;
+  line-height:1.25;
   text-transform:uppercase;
 }
 .story-block p{
@@ -210,9 +210,13 @@ aside{
 footer{
   text-align:center;
   border-top:3px double #000;
-  padding-top:10px;
+  padding-top:12px;
   font-size:0.9rem;
   box-sizing:border-box;
+  position:absolute;
+  bottom:30px;
+  left:60px;
+  right:60px;
 }
 footer a{
   color:#000;
@@ -246,7 +250,7 @@ footer em{
   .inside-issue { flex: none; margin-bottom: 25px; height: auto; }
   .lower { display: block; height: auto; margin-top: 30px; }
   .story-block { margin-bottom: 25px; height: auto; }
-  footer { margin-top: 30px; padding: 15px 0 0; }
+  footer { position: static; margin-top: 30px; padding: 15px 0 0; }
 }
 </style>
 </head>
@@ -267,7 +271,7 @@ footer em{
     <h3>Record turnout brings fresh faces and fierce energy to Fashion Week Sacramento 2026</h3>
     
     <!-- REPLACE THIS WITH LIVE CASTING PHOTO -->
-    <div class="main-photo" style="background-image:url('https://placehold.co/720x280?text=INSERT+LIVE+CASTING+PHOTO+HERE');">
+    <div class="main-photo" style="background-image:url('https://placehold.co/720x310?text=INSERT+LIVE+CASTING+PHOTO+HERE');">
       Live Casting Photo Goes Here
     </div>
     
@@ -286,14 +290,14 @@ footer em{
       
       <p>Executive producer Duane Ram, whose Emmy-recognized background in videography shapes the event's cinematic approach, emphasized the career-building aspect of participation. "Fashion Week Sacramento isn't just one night—it's a launchpad. Models who walk our runway consistently book campaigns, editorials, and opportunities throughout the West Coast."</p>
       
-      <p>Today's casting represents the first of two selection opportunities, with the final call scheduled for next week at Old Sacramento's Atrium Gallery. For those featured in today's session, the journey toward March 14th has officially begun.</p>
+      <p>Today's casting represents the first of two selection opportunities, with the final call scheduled for next week at Old Sacramento's Atrium Gallery. For those featured in today's session, the journey toward March 14th has officially begun. For those still preparing, next Saturday offers another chance to join Sacramento's most prestigious fashion showcase.</p>
     </div>
   </section>
 
   <!-- RIGHT COLUMN -->
   <aside>
     <div class="highlight">
-      <img src="https://placehold.co/350x165?text=March+14+Runway+Preview" alt="Fashion Week Sacramento venue">
+      <img src="https://placehold.co/350x180?text=March+14+Runway+Preview" alt="Fashion Week Sacramento venue">
       <strong>FASHION WEEK RETURNS MARCH 14 AT RAILROAD MUSEUM</strong>
       <span>
         Sacramento's 21st annual Fashion Week transforms the historic California State Railroad Museum into a cutting-edge fashion showcase featuring over thirty regional designers. The three-day celebration highlights sustainable innovation, cultural storytelling, and the intersection of technology with traditional craftsmanship.
@@ -306,11 +310,11 @@ footer em{
 
     <div class="inside-issue">
       <strong>INSIDE THIS ISSUE</strong>
-      • <strong>Casting Day Gallery</strong> — Behind-the-scenes photos from today's selection process and standout moments. <em>Page 2</em><br><br>
-      • <strong>Designer Spotlight</strong> — Meet the innovators creating collections from upcycled materials and smart textiles. <em>Page 3</em><br><br>
-      • <strong>Model Training Preview</strong> — What selected participants can expect from February workshops. <em>Page 4</em><br><br>
-      • <strong>Venue Feature</strong> — How the Railroad Museum transforms into a modern runway. <em>Page 5</em><br><br>
-      • <strong>Community Impact</strong> — Economic effects of Fashion Week Sacramento on local businesses. <em>Page 6</em>
+      • <strong>Casting Day Gallery</strong> — Behind-the-scenes photos from today's selection process and standout moments that caught the panel's attention. <em>Page 2</em><br><br>
+      • <strong>Designer Spotlight</strong> — Meet the innovators creating collections from upcycled materials, botanical dyes, and smart textiles. <em>Page 3</em><br><br>
+      • <strong>Model Training Preview</strong> — What selected participants can expect from the intensive February workshop series. <em>Page 4</em><br><br>
+      • <strong>Venue Feature</strong> — How the Railroad Museum transforms into a modern runway while preserving its historic character. <em>Page 5</em><br><br>
+      • <strong>Community Impact</strong> — Economic and cultural effects of Fashion Week Sacramento on local businesses and tourism. <em>Page 6</em>
     </div>
   </aside>
 </div>
@@ -318,19 +322,19 @@ footer em{
 <!-- LOWER STORIES -->
 <div class="lower">
   <div class="story-block">
-    <img src="https://placehold.co/330x115?text=Final+Casting+Jan+24" alt="Second casting announcement">
+    <img src="https://placehold.co/330x125?text=Final+Casting+Jan+24" alt="Second casting announcement">
     <strong>Final Casting Call: January 24 at Atrium Gallery</strong>
     <p>DMR Productions announces the second and final casting opportunity for Fashion Week Sacramento 2026. The session takes place next Saturday at Old Sacramento's Atrium Gallery, providing additional chances for models who missed today's event or seek callbacks from the initial round. Registration opens at 9 AM with walk-ins welcomed until 4 PM. Participants should arrive in fitted black attire with minimal accessories, ready for digital portfolio updates and runway evaluation. Selected models join the official roster for March's showcase and gain access to exclusive training workshops throughout February. The historic gallery space will be configured as a temporary runway for the day-long selection process, allowing casting directors to evaluate talent in a professional environment that mirrors the actual show venue atmosphere.</p>
   </div>
 
   <div class="story-block">
-    <img src="https://placehold.co/330x115?text=Work+of+Heart+Studio" alt="Casting venue sponsor">
+    <img src="https://placehold.co/330x125?text=Work+of+Heart+Studio" alt="Casting venue sponsor">
     <strong>Work of Heart Studio: Where Dreams Take Flight</strong>
     <p>Today's casting venue, Work of Heart Studio, continues its partnership with Fashion Week Sacramento as both location sponsor and creative hub. Owner Sarah Chen has transformed the historic Old Sacramento building into a premier destination for fashion photography, videography, and industry events. "Supporting Fashion Week aligns with our mission to elevate local talent," Chen explained during this morning's setup. The studio's exposed brick walls, professional lighting systems, and spacious layout make it ideal for casting sessions and portfolio development. Throughout the year, Work of Heart hosts designer workshops, model training sessions, and collaborative projects that strengthen Sacramento's fashion ecosystem. The venue's commitment to providing accessible creative space has helped launch dozens of careers in modeling, design, and fashion photography, making it an integral part of the capital's creative renaissance.</p>
   </div>
 
   <div class="story-block">
-    <img src="https://placehold.co/330x115?text=Behind+the+Scenes" alt="Production crew">
+    <img src="https://placehold.co/330x125?text=Behind+the+Scenes" alt="Production crew">
     <strong>Emmy-Winning Production Standards</strong>
     <p>Fashion Week Sacramento's technical excellence stems from producer Duane Ram's award-winning background in videography and live event production. The Emmy-recognized team approaches each casting and runway show with broadcast-quality standards, ensuring that digital audiences receive the same immersive experience as front-row guests. Advanced lighting design, multi-camera coverage, and precision audio engineering transform fashion presentations into cinematic experiences. This technical sophistication has helped establish Fashion Week Sacramento as a legitimate industry event that attracts national attention and provides participating models with professional-grade portfolio content. The production team's attention to detail extends from pre-event planning through post-show digital distribution, creating a comprehensive media package that benefits designers, models, and sponsors alike while elevating Sacramento's reputation as a serious fashion destination.</p>
   </div>
