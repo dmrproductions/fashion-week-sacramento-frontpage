@@ -62,63 +62,56 @@ body{
   box-shadow:0 5px 12px rgba(0,0,0,0.5);
 }
 
-/* -------- Masthead (Decorative Elements Removed) -------- */
+/* -------- Masthead (Streamlined) -------- */
 header{
   text-align:center;
   border-top:6px double #2c2416;
   border-bottom:3px solid #2c2416;
-  padding:15px 0 12px; /* Reduced padding for space recovery */
-  margin-bottom:18px;
+  padding:12px 0 10px; /* Tightened padding */
+  margin-bottom:16px; /* Reduced margin */
   background:linear-gradient(to bottom, #f4ecd8 0%, #ebe0cc 50%, #f4ecd8 100%);
   position:relative;
 }
-header::after{
-  content:"";
-  display:block;
-  border-bottom:1px solid #5a4a3a;
-  margin-top:6px;
-  width:60%;
-  margin-left:20%;
-}
+/* Removed extra decorative line */
 header h1{
-  margin:0 0 6px 0; /* Tightened spacing */
+  margin:0 0 4px 0; /* Minimal spacing */
   font-family:"Cinzel", "Playfair Display", serif;
-  font-size:3rem; /* Slightly reduced for space */
+  font-size:3rem;
   font-weight:700;
   letter-spacing:3px;
   text-transform:uppercase;
   color:#1a1410;
   text-shadow:2px 2px 0px rgba(0,0,0,0.1);
-  line-height:1;
+  line-height:0.95; /* Tightened line height */
 }
 header p{
   margin:0;
   font-family:"Cinzel", serif;
   font-weight:600;
-  font-size:0.75rem; /* Reduced for guaranteed single line */
+  font-size:0.72rem; /* Reduced for guaranteed single line */
   text-transform:uppercase;
   letter-spacing:0.8px;
   color:#3a3020;
   border-top:1px solid #5a4a3a;
-  border-bottom:1px solid #5a4a3a;
-  padding:6px 0;
+  padding:5px 0; /* Tightened padding */
   display:inline-block;
   width:90%;
-  white-space:nowrap; /* Force single line */
+  white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
+  line-height:1; /* Single line enforcement */
 }
 
-/* -------- Main Grid (Optimized Height) -------- */
+/* -------- Main Grid -------- */
 .content{
   display:grid;
   grid-template-columns:68% 29%;
   column-gap:3%;
   height:840px; /* Reduced from 850px */
-  margin-bottom:18px; /* Reduced margin */
+  margin-bottom:16px; /* Reduced margin */
 }
 
-/* -------- Main Story (Typography Constraints) -------- */
+/* -------- Main Story (Optimized Typography) -------- */
 .main-story{
   padding-right:15px;
   overflow:hidden;
@@ -130,16 +123,16 @@ header p{
   text-align:center;
   text-transform:uppercase;
   font-family:"Playfair Display", serif;
-  font-size:1.85rem; /* Reduced to guarantee 2 lines */
+  font-size:1.75rem; /* Optimized size */
   font-weight:900;
   border-bottom:3px solid #2c2416;
-  padding-bottom:8px;
+  padding-bottom:6px; /* Reduced padding */
   margin-top:0;
-  margin-bottom:10px;
-  line-height:1.1;
-  letter-spacing:0.5px;
+  margin-bottom:8px; /* Reduced margin */
+  line-height:1.05; /* Tightened line height */
+  letter-spacing:0.3px;
   color:#1a1410;
-  height:80px; /* Fixed height for exactly 2 lines */
+  height:72px; /* Optimized for 2 lines without "SACRAMENTO" */
   overflow:hidden;
   display:flex;
   align-items:center;
@@ -147,13 +140,13 @@ header p{
 }
 .main-story h3{
   text-align:center;
-  font-size:0.92rem; /* Reduced for single line guarantee */
+  font-size:0.9rem; /* Slightly reduced */
   font-style:italic;
-  margin:0 0 12px 0;
+  margin:0 0 10px 0; /* Reduced margin */
   color:#3a3020;
-  line-height:1.2;
+  line-height:1.15; /* Tightened */
   font-weight:600;
-  height:22px; /* Fixed height for single line */
+  height:20px; /* Optimized single line */
   overflow:hidden;
   white-space:nowrap;
   text-overflow:ellipsis;
@@ -168,7 +161,7 @@ header p{
   justify-content:center;
   color:#5a4a3a;
   font-style:italic;
-  margin:0 0 6px;
+  margin:0 0 5px; /* Reduced margin */
   font-size:0.85rem;
   cursor:pointer;
   transition:all 0.3s ease;
@@ -187,24 +180,25 @@ header p{
   color:transparent;
 }
 .photo-caption{
-  font-size:0.75rem; /* Reduced for space */
+  font-size:0.74rem; /* Reduced */
   font-style:italic;
   color:#3a3020;
-  margin-bottom:10px;
+  margin-bottom:8px; /* Reduced margin */
   border-bottom:2px dotted #5a4a3a;
-  padding-bottom:4px;
+  padding-bottom:3px; /* Reduced padding */
   text-align:center;
   font-family:"Times New Roman", serif;
-  height:18px; /* Fixed height for single line */
+  height:17px; /* Optimized single line */
   overflow:hidden;
   white-space:nowrap;
   text-overflow:ellipsis;
+  line-height:1.1; /* Tightened */
 }
 .main-text{
-  height:395px; /* Increased to compensate for header space recovery */
+  height:415px; /* Increased to compensate for header space recovery */
   text-align:justify;
   font-size:0.96rem;
-  line-height:1.5;
+  line-height:1.45; /* Tightened from 1.5 */
   overflow:hidden;
   box-sizing:border-box;
   columns:2;
@@ -213,7 +207,7 @@ header p{
   color:#2c2416;
 }
 .main-text p{
-  margin:0 0 12px 0;
+  margin:0 0 10px 0; /* Reduced margin */
   text-indent:1.5em;
 }
 .main-text p:first-of-type{
@@ -223,8 +217,8 @@ header p{
   float:left;
   font-family:"Playfair Display", serif;
   font-size:4rem;
-  line-height:0.75;
-  padding-top:8px;
+  line-height:0.72; /* Tightened */
+  padding-top:6px;
   padding-right:10px;
   font-weight:900;
   color:#1a1410;
@@ -232,27 +226,28 @@ header p{
 .continued{
   font-style:italic;
   color:#3a3020;
-  font-size:0.9rem;
+  font-size:0.88rem;
   text-align:right;
-  margin-top:10px;
+  margin-top:8px;
   font-weight:600;
   border-top:1px solid #d4c4a8;
-  padding-top:6px;
+  padding-top:5px;
+  line-height:1.2; /* Tightened */
 }
 
-/* -------- Right Column (Constrained Heights) -------- */
+/* -------- Right Column (Optimized Heights) -------- */
 aside{
   height:100%;
   overflow:hidden;
   display:flex;
   flex-direction:column;
-  gap:12px;
+  gap:10px; /* Reduced gap */
 }
 .highlight{
-  flex:0 0 455px; /* Reduced for space optimization */
+  flex:0 0 460px; /* Slightly reduced */
   overflow:hidden;
   border:2px solid #5a4a3a;
-  padding:10px;
+  padding:8px; /* Reduced padding */
   background:#ebe0cc;
   box-shadow:inset 0 0 15px rgba(0,0,0,0.08);
 }
@@ -261,7 +256,7 @@ aside{
   height:180px;
   border:3px solid #2c2416;
   background:#d4c4a8 center/cover no-repeat;
-  margin-bottom:8px;
+  margin-bottom:6px; /* Reduced margin */
   cursor:pointer;
   transition:all 0.3s ease;
   background-size:cover;
@@ -275,16 +270,16 @@ aside{
 }
 .highlight strong{
   display:block;
-  margin-bottom:6px;
-  font-size:0.95rem;
-  line-height:1.2;
+  margin-bottom:5px; /* Reduced margin */
+  font-size:0.92rem; /* Slightly reduced */
+  line-height:1.15; /* Tightened */
   font-family:"Playfair Display", serif;
   font-weight:700;
   color:#1a1410;
   text-transform:uppercase;
-  letter-spacing:0.5px;
+  letter-spacing:0.3px;
   text-align:center;
-  height:44px; /* Fixed height for maximum 2 lines */
+  height:40px; /* Optimized for 2 lines without "RETURNS" */
   overflow:hidden;
   display:flex;
   align-items:center;
@@ -293,8 +288,8 @@ aside{
 .highlight span{
   display:block;
   text-align:justify;
-  line-height:1.45;
-  font-size:0.88rem;
+  line-height:1.4; /* Tightened from 1.45 */
+  font-size:0.87rem; /* Slightly reduced */
   color:#2c2416;
   text-indent:1em;
 }
@@ -302,44 +297,45 @@ aside{
   flex:1;
   border:3px double #2c2416;
   background:#ebe0cc;
-  padding:12px;
+  padding:10px; /* Reduced padding */
   overflow:hidden;
-  font-size:0.84rem;
-  line-height:1.55;
+  font-size:0.82rem; /* Slightly reduced */
+  line-height:1.5; /* Tightened from 1.55 */
   box-sizing:border-box;
   box-shadow:inset 0 0 15px rgba(0,0,0,0.08);
 }
 .inside-issue strong{
   display:block;
   text-align:center;
-  margin-bottom:10px;
+  margin-bottom:8px; /* Reduced margin */
   text-transform:uppercase;
   border-bottom:3px double #2c2416;
-  padding-bottom:6px;
-  font-size:0.9rem;
+  padding-bottom:5px; /* Reduced padding */
+  font-size:0.88rem; /* Slightly reduced */
   letter-spacing:2px;
   font-family:"Cinzel", serif;
   font-weight:700;
   color:#1a1410;
+  line-height:1.1; /* Tightened */
 }
 
-/* -------- Lower Stories (Footer Clearance Ensured) -------- */
+/* -------- Lower Stories (Footer Clearance) -------- */
 .lower{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:15px;
-  height:385px; /* Optimized height */
-  margin-bottom:22px; /* Calculated footer clearance */
+  gap:14px; /* Reduced gap */
+  height:395px; /* Slightly increased to use recovered space */
+  margin-bottom:20px; /* Reduced margin */
   border-top:3px solid #2c2416;
-  padding-top:12px;
+  padding-top:10px; /* Reduced padding */
 }
 .story-block{
-  font-size:0.88rem;
-  line-height:1.45;
+  font-size:0.87rem; /* Slightly reduced */
+  line-height:1.4; /* Tightened from 1.45 */
   overflow:hidden;
   box-sizing:border-box;
   background:#ebe0cc;
-  padding:10px;
+  padding:8px; /* Reduced padding */
   box-shadow:0 2px 5px rgba(0,0,0,0.15);
   border-right:2px solid #d4c4a8;
 }
@@ -351,7 +347,7 @@ aside{
   height:125px;
   border:3px solid #2c2416;
   background:#d4c4a8 center/cover no-repeat;
-  margin-bottom:6px;
+  margin-bottom:5px; /* Reduced margin */
   cursor:pointer;
   transition:all 0.3s ease;
   background-size:cover;
@@ -365,23 +361,23 @@ aside{
 }
 .story-block strong{
   display:block;
-  margin-bottom:6px;
-  font-size:0.92rem;
-  line-height:1.2;
+  margin-bottom:5px; /* Reduced margin */
+  font-size:0.9rem; /* Slightly reduced */
+  line-height:1.15; /* Tightened from 1.2 */
   text-transform:uppercase;
   font-family:"Playfair Display", serif;
   font-weight:700;
   color:#1a1410;
-  letter-spacing:0.3px;
+  letter-spacing:0.2px;
   text-align:center;
-  height:44px; /* Fixed height for 2 lines maximum */
+  height:42px; /* Optimized for 2 lines */
   overflow:hidden;
   display:flex;
   align-items:center;
   justify-content:center;
 }
 .story-block p{
-  margin:0 0 5px 0;
+  margin:0 0 4px 0; /* Reduced margin */
   text-align:justify;
   color:#2c2416;
   text-indent:1em;
@@ -391,14 +387,15 @@ aside{
 footer{
   text-align:center;
   border-top:6px double #2c2416;
-  padding-top:18px;
-  font-size:0.86rem;
+  padding-top:16px; /* Slightly reduced */
+  font-size:0.84rem; /* Slightly reduced */
   box-sizing:border-box;
   position:absolute;
-  bottom:28px; /* Adjusted for proper clearance */
+  bottom:26px; /* Adjusted for proper clearance */
   left:60px;
   right:60px;
   color:#2c2416;
+  line-height:1.3; /* Tightened */
 }
 footer a{
   color:#1a1410;
@@ -412,10 +409,11 @@ footer a:hover{
 }
 footer em{
   font-style:italic;
-  font-size:0.8rem;
+  font-size:0.78rem; /* Slightly reduced */
   display:block;
-  margin-top:10px;
+  margin-top:8px; /* Reduced margin */
   color:#3a3020;
+  line-height:1.2; /* Tightened */
 }
 
 /* -------- Image Editor Modal -------- */
@@ -512,7 +510,7 @@ footer em{
 
   <!-- MAIN STORY -->
   <section class="main-story">
-    <h2>Runway Stars Discovered at Morning Casting for Fashion Week Sacramento</h2>
+    <h2>Runway Stars Discovered at Morning Casting for Fashion Week</h2>
     <h3>Morning casting session uncovers rising talent ready to redefine Sacramento's fashion narrative</h3>
     
     <!-- CLICKABLE MAIN PHOTO -->
@@ -521,7 +519,7 @@ footer em{
     </div>
     
     <div class="photo-caption">
-      <strong>SPOTLIGHT MOMENT:</strong> Models showcase their runway presence at the model castings for Fashion Week Sacramento
+      <strong>SPOTLIGHT MOMENT:</strong> Models showcase their runway presence at the model castings for Fashion Week
     </div>
 
     <div class="main-text">
@@ -541,7 +539,7 @@ footer em{
   <aside>
     <div class="highlight">
       <div class="highlight-img" id="highlightImg" onclick="uploadImage('highlightImg', 350, 180)"></div>
-      <strong>Fashion Week Returns March 14 at Railroad Museum</strong>
+      <strong>Fashion Week March 14 at Railroad Museum</strong>
       <span>
         Sacramento's 21st annual Fashion Week transforms the historic California State Railroad Museum into a cutting-edge fashion showcase featuring over fifteen regional designers scheduled to take the stage, closing out the week on Saturday, March 14th. The event celebrates sustainable innovation, cultural storytelling, and the dynamic intersection of technology with traditional craftsmanship. Tickets go on sale February 1st.
       </span>
@@ -563,14 +561,14 @@ footer em{
   <div class="story-block">
     <div class="story-img" id="story1Img" onclick="uploadImage('story1Img', 330, 125)"></div>
     <strong>Day Two Model Casting: January 24 at Atrium Gallery</strong>
-    <p>Fashion Week Sacramento 2026 holds its final casting session Saturday, January 24, at Old Sacramento's Atrium Gallery. The casting runs from 11 AM to 2 PM with walk-ins welcome. Models should wear fitted black attire with minimal accessories for digital portfolio shots and runway evaluation. You don't need to have an agent or prior experience. Selected participants receive spots on the March 14th runway.</p>
+    <p>Fashion Week Sacramento 2026 holds its final casting session Saturday, January 24, at Old Sacramento's Atrium Gallery. The casting runs from 11 AM to 2 PM with walk-ins welcome. Models should wear fitted black attire with minimal accessories for digital portfolio shots and runway evaluation. You don't need to have an agent or prior experience. Selected participants receive spots on the March 14th runway and access to exclusive February training workshops.</p>
     <div class="continued"><em>Details on Page 7</em></div>
   </div>
 
   <div class="story-block">
     <div class="story-img" id="story2Img" onclick="uploadImage('story2Img', 330, 125)"></div>
     <strong>Regalia in Bloom Presented as The Regalia Chamber</strong>
-    <p>Regalia in Bloom, photographer Trin De's ongoing exploration of adornment as authority, presents an installation at Fashion Week Sacramento 2026 through The Regalia Chamber, a site-specific exhibition which draws from the Regalia Archives. The installation showcases De's ability to create evocative scenes while presenting samples of the extraordinary wardrobe available for commissioned photography work.</p>
+    <p>Regalia in Bloom, photographer Trin De's ongoing exploration of adornment as authority, presents an installation at Fashion Week Sacramento 2026 through The Regalia Chamber, a site-specific exhibition which draws from the Regalia Archives, a curated collection stewarded by Work of Heart Studio. The installation showcases De's ability to create evocative scenes while presenting samples of the extraordinary wardrobe available for commissioned photography work.</p>
     <div class="continued"><em>Feature story on Page 4</em></div>
   </div>
 
