@@ -1,60 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=1100"/>
-<title>Fashion Week Sacramento | Front Page (Letter)</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1100" />
+<title>Fashion Week Sacramento | Front Page</title>
 <style>
 body{margin:0;background:#dcd8cf;font-family:"Times New Roman",serif;}
 #page{
-  width:1100px;height:1400px;margin:0 auto;background:#fdfbf7;
-  border:8px solid #ccc;box-shadow:0 0 10px rgba(0,0,0,0.2);
-  position:relative;overflow:hidden;padding:65px 60px 60px 60px;
-  box-sizing:border-box;
+  width:1100px;height:1400px;margin:0 auto;
+  background:#fdfbf7;border:8px solid #ccc;
+  box-shadow:0 0 10px rgba(0,0,0,0.25);
+  position:relative;overflow:hidden;
+  box-sizing:border-box;padding:55px;
 }
 
-/* MASTHEAD */
-header{text-align:center;border-top:4px double #000;border-bottom:4px double #000;
-  padding:12px 0;margin-bottom:10px;}
+/* --- Masthead --- */
+header{text-align:center;border-top:4px double #000;border-bottom:4px double #000;padding:12px 0;margin-bottom:15px;}
 header h1{margin:0;font-size:2.5rem;font-weight:900;letter-spacing:1px;}
 header p{margin:4px 0 0;font-style:italic;font-size:0.9rem;}
 
-/* MAIN GRID */
-.content{display:grid;grid-template-columns:67% 29%;column-gap:4%;}
+/* --- Main grid: left story + right column --- */
+.content{
+  display:grid;
+  grid-template-columns:68% 29%;
+  column-gap:3%;
+  height:950px;
+}
 
-/* MAIN STORY */
-.main-story{border-right:1px solid #000;padding-right:12px;box-sizing:border-box;}
-.main-story h2{text-align:center;text-transform:uppercase;font-size:1.7rem;
-  font-weight:bold;border-bottom:1px solid #555;padding-bottom:5px;margin-top:0;}
-.main-photo{width:100%;height:310px;border:1px solid #333;background:#e5e5e5 center/cover no-repeat;
-  display:flex;align-items:center;justify-content:center;color:#666;font-style:italic;margin:10px 0;}
-.main-text{text-align:justify;font-size:1.03rem;line-height:1.55;overflow:hidden;}
+/* --- Main Story --- */
+.main-story{border-right:1px solid #000;padding-right:10px;overflow:hidden;box-sizing:border-box;height:100%;}
+.main-story h2{text-align:center;text-transform:uppercase;font-size:1.7rem;font-weight:bold;border-bottom:1px solid #555;padding-bottom:4px;margin-top:0;}
+.main-photo{width:100%;height:310px;border:1px solid #333;background:#e5e5e5 center/cover no-repeat;display:flex;align-items:center;justify-content:center;color:#666;font-style:italic;margin:10px 0;}
+.main-text{height:590px;text-align:justify;font-size:1.02rem;line-height:1.55;overflow:hidden;}
 
-/* RIGHT SIDEBAR */
-.highlight img{width:100%;height:160px;border:1px solid #444;object-fit:cover;margin-bottom:5px;}
-.highlight strong{display:block;margin-bottom:3px;}
+/* --- Right Column --- */
+aside{height:100%;overflow:hidden;}
+.highlight{height:63%;overflow:hidden;}
+.highlight img{width:100%;height:180px;border:1px solid #444;object-fit:cover;margin-bottom:5px;}
+.highlight strong{display:block;margin-bottom:4px;font-size:1rem;}
 .highlight span{display:block;text-align:justify;line-height:1.45;font-size:0.95rem;}
+
 .inside-issue{
-  border:1px solid #aaa;background:#f3f1ec;margin-top:15px;padding:8px 10px;
+  height:34%;margin-top:10px;border:1px solid #aaa;
+  background:#f3f1ec;padding:8px 10px;overflow:hidden;
   font-size:0.9rem;line-height:1.4;box-sizing:border-box;
 }
-.inside-issue strong{display:block;text-align:center;margin-bottom:5px;text-transform:uppercase;}
-
-/* LOWER STORIES */
-.lower{margin-top:25px;display:grid;grid-template-columns:repeat(3,1fr);gap:15px;}
-.story-block{border-top:0.5px solid #999;padding-top:8px;font-size:0.97rem;line-height:1.45;}
-.story-block img{width:100%;height:150px;border:1px solid #444;object-fit:cover;margin-bottom:5px;}
-
-/* ADVERTISEMENT BANNER */
-.ad-banner{
-  width:100%;height:110px;margin-top:20px;border:1px solid #999;
-  background:url('https://placehold.co/1000x110?text=ADVERTISEMENT+-+DMR+Productions+Sponsor+Placement')
-  center/cover no-repeat;
-  cursor:pointer;
+.inside-issue strong{
+  display:block;text-align:center;margin-bottom:5px;
+  text-transform:uppercase;
+  border-bottom:1px solid #aaa;padding-bottom:3px;
 }
 
-/* FOOTER */
-footer{border-top:3px double #000;text-align:center;padding-top:8px;font-size:0.9rem;margin-top:5px;}
+/* --- Lower Stories --- */
+.lower{
+  position:absolute;bottom:180px;left:55px;right:55px;
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:15px;height:260px;
+}
+.story-block{
+  border-top:1px solid #999;padding-top:8px;
+  font-size:0.96rem;line-height:1.45;overflow:hidden;
+}
+.story-block img{width:100%;height:120px;border:1px solid #444;object-fit:cover;margin-bottom:5px;}
+
+/* --- Ad banner --- */
+.ad-banner{
+  position:absolute;bottom:100px;left:55px;width:990px;height:65px;
+  border:1px solid #999;
+  background:url('https://placehold.co/990x65?text=ADVERTISEMENT+-+DMR+PRODUCTIONS+SPONSOR+STRIP') center/cover no-repeat;
+  font-style:italic;text-align:center;line-height:60px;font-size:0.9rem;color:#333;
+}
+
+/* --- Footer --- */
+footer{
+  position:absolute;bottom:15px;left:0;width:100%;
+  text-align:center;border-top:3px double #000;padding-top:6px;font-size:0.9rem;
+}
 footer a{color:#000;text-decoration:none;border-bottom:1px solid #000;}
 footer a:hover{color:#b58900;border-bottom-color:#b58900;}
 footer em{font-style:italic;font-size:0.85rem;}
@@ -63,76 +84,83 @@ footer em{font-style:italic;font-size:0.85rem;}
 
 <body>
 <div id="page">
-  <header>
-    <h1>FASHION WEEK SACRAMENTO</h1>
-    <p>Sacramento, California • Issue Date: January 19, 2026 • Volume 21 No 1</p>
-  </header>
 
-  <div class="content">
-    <!-- LEFT MAIN STORY -->
-    <section class="main-story">
-      <h2>RUNWAY MODELS TURNED OUT FOR DAY ONE CASTING</h2>
-      <div class="main-photo">Main Photo Placeholder – Replace with Casting Image</div>
-      <div class="main-text">
-        Fashion Week Sacramento 2026 kicked off Saturday as DMR Productions hosted its first open casting at Work of Heart Studio on J Street. 
-        The crowd was electric as hundreds of hopefuls posed before industry judges. Casting director Melissa Kay explained that more than 60% of this year’s registrants were new talent. 
-        <br><br>
-        Photographers, stylists, and designers scouted the room for fresh faces and unique looks. Final selections advance to training workshops and rehearsals for the March 14 runway premiere at the California State Railroad Museum. “This city has talent ready for the world,” Kay added, as attendees cheered.
-      </div>
-    </section>
+<header>
+  <h1>FASHION WEEK SACRAMENTO</h1>
+  <p>Sacramento, California • Issue Date: January 19, 2026 • Volume 21 No 1</p>
+</header>
 
-    <!-- RIGHT COLUMN -->
-    <aside>
-      <div class="highlight">
-        <img src="https://placehold.co/350x160?text=Highlight+Image" alt="Highlight">
-        <strong>FASHION WEEK RETURNS MARCH 14 AT THE RAILROAD MUSEUM</strong>
-        <span>
-          Now in its 21st year, Fashion Week Sacramento continues to shine as a hub of style and innovation. The 2026 edition combines heritage ambience with sustainable design on the runway, spotlighting regional creators and Green Fashion initiatives.
-        </span>
-      </div>
+<div class="content">
 
-      <!-- INSIDE THE ISSUE -->
-      <div class="inside-issue">
-        <strong>INSIDE THE ISSUE</strong>
-        • Meet The Designers – page 2    • Model Workshops Recap – page 4 <br>
-        • Sustainability in Style Forum – page 6    • Behind the Scenes Gallery – page 8
-      </div>
-    </aside>
+  <!-- MAIN STORY -->
+  <section class="main-story">
+    <h2>RUNWAY MODELS BRING ENERGY TO FIRST CASTING</h2>
+    <div class="main-photo">Main Photo Placeholder – replace with casting image</div>
+    <div class="main-text">
+      Inside Work of Heart Studio on J Street, an eager crowd of hopeful models lined up for the first day of Fashion Week Sacramento 2026 castings. 
+      <br><br>
+      DMR Productions team members reviewed applications and previewed runway walks throughout the morning. Creative director James Porter shared: 
+      “We’ve never seen such diversity and confidence come through our doors.” 
+      <br><br>
+      This year’s theme, <em>‘Threads of Innovation,’</em> focuses on sustainable textiles and inclusive representation. Final selections will advance into training sessions curated by industry mentors ahead of the March runway premiere at the California State Railroad Museum. 
+      Organizers say the move underscores Sacramento’s rise as a cultural fashion hub.
+    </div>
+  </section>
+
+  <!-- SIDEBAR -->
+  <aside>
+    <div class="highlight">
+      <img src="https://placehold.co/350x160?text=Highlight+Image" alt="Highlight">
+      <strong>FASHION WEEK RETURNS MARCH 14 AT THE RAILROAD MUSEUM</strong>
+      <span>
+        Mark your calendars for a three‑day celebration of style, art, and community at one of California’s most distinctive venues. 
+        Fashion Week Sacramento 2026 will open its runway on March 14 featuring a hybrid of in‑person and live‑streamed collections from regional brands. 
+        Attendees can expect 40+ looks per show and exclusive after‑events in Old Town.
+      </span>
+    </div>
+
+    <div class="inside-issue">
+      <strong>INSIDE THE ISSUE</strong>
+      • Meet the final 50 selected models – Page 2<br>
+      • Designer Profiles on Innovation – Page 3<br>
+      • Sustainability Forum Coverage – Page 5<br>
+      • Sponsor Spotlights on Local Brands – Page 7<br>
+      • Backstage Photo Gallery – Page 9
+    </div>
+  </aside>
+</div>
+
+<!-- LOWER STORIES -->
+<div class="lower">
+  <div class="story-block">
+    <img src="https://placehold.co/330x120?text=Story+1" alt="">
+    <strong>Second Casting Announced for January 24</strong>
+    DMR Productions confirms a follow‑up casting at Old Sacramento’s Atrium Gallery on January 24. Participants can register online and receive professional comp card updates through the organization’s model portal.
   </div>
-
-  <!-- LOWER STORIES -->
-  <div class="lower">
-    <div class="story-block">
-      <img src="https://placehold.co/350x150?text=Story+1" alt="">
-      <strong>Next Casting January 24 at The Atrium</strong>
-      DMR Productions has announced a second casting event at Old Sacramento’s Atrium Gallery on January 24. Applicants will be considered for feature segments during the main show. Pros and newcomers alike are encouraged to bring professional headshots and a one‑minute walk.
-    </div>
-
-    <div class="story-block">
-      <img src="https://placehold.co/350x150?text=Story+2" alt="">
-      <strong>Local Designers Push Creative Boundaries</strong>
-      Sacramento’s Nadia Lopez and Lara Keane revealed sneak peeks of their upcoming lines, fusing reclaimed materials and technological textiles. Their collections aim to put Sacramento alongside Los Angeles and Portland as a west coast design capital.
-    </div>
-
-    <div class="story-block">
-      <img src="https://placehold.co/350x150?text=Story+3" alt="">
-      <strong>Behind the Scenes with DMR Productions</strong>
-      Preparation for Fashion Week starts months in advance. From venue logistics to designer coordination, DMR’s crew manages nearly 100 staff roles covering lighting, sound, and casting operations across venues.
-    </div>
+  <div class="story-block">
+    <img src="https://placehold.co/330x120?text=Story+2" alt="">
+    <strong>Local Designers Preview Eco‑Focused Lines</strong>
+    Designers Nadia Lopez and Victor Reyes will integrate plant‑based fibers and repurposed materials into their FW26 collections, accelerating the city’s shift toward sustainable fashion economies.
   </div>
+  <div class="story-block">
+    <img src="https://placehold.co/330x120?text=Story+3" alt="">
+    <strong>Behind the Scenes with Production Crew</strong>
+    Lighting engineer Miguel Ramos and his team spend weeks programming transitions for each segment. “Precision is everything — we choreograph music and spotlights like a dance,” Ramos explained.
+  </div>
+</div>
 
-  <!-- ADVERTISEMENT STRIP -->
-  <div class="ad-banner" title="Editable Advertisement"></div>
+<!-- ADVERTISEMENT -->
+<div class="ad-banner">ADVERTISEMENT — EDIT OR REPLACE WITH SPONSOR IMAGE</div>
 
-  <footer>
-    <strong>
-      DMR Productions • 
-      <a href="https://www.dmrproductions.online" target="_blank">www.dmrproductions.online</a> • 
-      <a href="https://www.instagram.com/dmrprod" target="_blank">@dmrprod</a> • 
-      <a href="https://www.instagram.com/sacfashionweek" target="_blank">@sacfashionweek</a>
-    </strong><br>
-    <em>A DMR Productions Publication • Fashion Week Sacramento 2026</em>
-  </footer>
+<footer>
+  <strong>
+    DMR Productions • 
+    <a href="https://www.dmrproductions.online" target="_blank">www.dmrproductions.online</a> • 
+    <a href="https://www.instagram.com/dmrprod" target="_blank">@dmrprod</a> • 
+    <a href="https://www.instagram.com/sacfashionweek" target="_blank">@sacfashionweek</a>
+  </strong><br>
+  <em>A DMR Productions Publication • Fashion Week Sacramento 2026</em>
+</footer>
 
 </div>
 </body>
