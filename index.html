@@ -3,25 +3,31 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=1100, user-scalable=no"/>
-<title>Fashion Week Sacramento | Live Casting Edition</title>
+<title>Fashion Week Sacramento | Heritage Edition</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
 <style>
 body{
   margin:0;
-  background:#dcd8cf;
-  font-family:"Times New Roman",serif;
+  background:#8b7355;
+  font-family:"Playfair Display", Georgia, "Times New Roman", serif;
   overflow-x:auto;
 }
 #page{
   width:1100px;
   height:1550px;
   margin:20px auto;
-  background:#fdfbf7;
-  border:8px solid #ccc;
-  box-shadow:0 0 10px rgba(0,0,0,0.25);
+  background:#f4ecd8;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(120,119,108,0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(120,119,108,0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(120,119,108,0.1) 0%, transparent 50%);
+  border:8px solid #5a4a3a;
+  box-shadow:0 0 25px rgba(0,0,0,0.6);
   position:relative;
   overflow:hidden;
   box-sizing:border-box;
   padding:55px 60px 45px 60px;
+  color:#2c2416;
 }
 
 /* -------- Action Buttons -------- */
@@ -34,45 +40,81 @@ body{
   gap:10px;
 }
 .action-btn{
-  background:#000;
-  color:#fff;
+  background:#2c2416;
+  color:#f4ecd8;
   padding:12px 20px;
-  border:none;
-  border-radius:5px;
-  font-family:"Times New Roman",serif;
+  border:2px solid #5a4a3a;
+  border-radius:3px;
+  font-family:"Playfair Display", serif;
   font-size:0.95rem;
+  font-weight:600;
   cursor:pointer;
   transition:all 0.2s ease;
   text-decoration:none;
   display:inline-block;
-  box-shadow:0 2px 5px rgba(0,0,0,0.3);
+  box-shadow:0 3px 8px rgba(0,0,0,0.4);
+  text-transform:uppercase;
+  letter-spacing:1px;
 }
 .action-btn:hover{
-  background:#b58900;
+  background:#8b7355;
   transform:translateY(-2px);
+  box-shadow:0 5px 12px rgba(0,0,0,0.5);
 }
 
 /* -------- Masthead -------- */
 header{
   text-align:center;
-  border-top:4px double #000;
-  border-bottom:4px double #000;
-  padding:12px 0;
-  margin-bottom:18px;
+  border-top:6px double #2c2416;
+  border-bottom:3px solid #2c2416;
+  padding:20px 0;
+  margin-bottom:22px;
+  background:linear-gradient(to bottom, #f4ecd8 0%, #ebe0cc 50%, #f4ecd8 100%);
+  position:relative;
+}
+header::before{
+  content:"❦ ❦ ❦";
+  display:block;
+  font-size:1.2rem;
+  color:#5a4a3a;
+  margin-bottom:8px;
+  letter-spacing:8px;
+}
+header::after{
+  content:"";
+  display:block;
+  border-bottom:1px solid #5a4a3a;
+  margin-top:8px;
+  width:60%;
+  margin-left:20%;
 }
 header h1{
   margin:0;
-  font-size:2.5rem;
-  font-weight:900;
-  letter-spacing:1px;
+  font-family:"Cinzel", "Playfair Display", serif;
+  font-size:3.2rem;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#1a1410;
+  text-shadow:2px 2px 0px rgba(0,0,0,0.1);
+  line-height:1;
 }
 header p{
-  margin:4px 0 0;
-  font-style:italic;
-  font-size:0.9rem;
+  margin:8px 0 0;
+  font-family:"Cinzel", serif;
+  font-weight:600;
+  font-size:0.85rem;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:#3a3020;
+  border-top:1px solid #5a4a3a;
+  border-bottom:1px solid #5a4a3a;
+  padding:8px 0;
+  display:inline-block;
+  width:80%;
 }
 
-/* -------- Main Grid (Left+Right) -------- */
+/* -------- Main Grid -------- */
 .content{
   display:grid;
   grid-template-columns:68% 29%;
@@ -81,92 +123,113 @@ header p{
   margin-bottom:20px;
 }
 
-/* -------- Main Story (Left) -------- */
+/* -------- Main Story -------- */
 .main-story{
-  padding-right:10px;
+  padding-right:15px;
   overflow:hidden;
   box-sizing:border-box;
   height:100%;
+  border-right:2px solid #5a4a3a;
 }
 .main-story h2{
   text-align:center;
   text-transform:uppercase;
-  font-size:1.7rem;
-  font-weight:bold;
-  border-bottom:1px solid #555;
-  padding-bottom:8px;
+  font-family:"Playfair Display", serif;
+  font-size:2rem;
+  font-weight:900;
+  border-bottom:3px solid #2c2416;
+  padding-bottom:10px;
   margin-top:0;
   margin-bottom:15px;
   line-height:1.1;
+  letter-spacing:1px;
+  color:#1a1410;
 }
 .main-story h3{
   text-align:center;
-  font-size:0.95rem;
+  font-size:1rem;
   font-style:italic;
   margin:0 0 18px 0;
-  color:#444;
-  line-height:1.3;
+  color:#3a3020;
+  line-height:1.4;
+  font-weight:600;
 }
 .main-photo{
   width:100%;
   height:310px;
-  border:1px solid #333;
-  background:#e5e5e5 center/cover no-repeat;
+  border:4px solid #2c2416;
+  background:#d4c4a8 center/cover no-repeat;
   display:flex;
   align-items:center;
   justify-content:center;
-  color:#999;
+  color:#5a4a3a;
   font-style:italic;
-  margin:0 0 8px;
+  margin:0 0 10px;
   font-size:0.85rem;
   cursor:pointer;
-  transition:all 0.2s ease;
+  transition:all 0.3s ease;
   position:relative;
   background-size:cover;
   background-position:center;
+  filter:sepia(0.4) contrast(1.15) grayscale(0.3);
+  box-shadow:inset 0 0 20px rgba(0,0,0,0.15), 3px 3px 0px rgba(0,0,0,0.1);
 }
 .main-photo:hover{
-  opacity:0.9;
-  outline:2px solid #b58900;
+  filter:sepia(0.2) contrast(1.1) grayscale(0.1);
+  outline:3px solid #8b7355;
+  transform:translateY(-1px);
 }
 .main-photo.has-image{
   color:transparent;
 }
 .photo-caption{
-  font-size:0.82rem;
+  font-size:0.8rem;
   font-style:italic;
-  color:#555;
+  color:#3a3020;
   margin-bottom:12px;
-  border-bottom:1px solid #ddd;
+  border-bottom:2px dotted #5a4a3a;
   padding-bottom:6px;
+  text-align:center;
+  font-family:"Times New Roman", serif;
 }
 .main-text{
   height:380px;
   text-align:justify;
-  font-size:0.98rem;
-  line-height:1.48;
+  font-size:0.96rem;
+  line-height:1.5;
   overflow:hidden;
   box-sizing:border-box;
   columns:2;
-  column-gap:18px;
+  column-gap:22px;
+  column-rule:1px solid #d4c4a8;
+  color:#2c2416;
 }
 .main-text p{
-  margin:0 0 11px 0;
+  margin:0 0 12px 0;
+  text-indent:1.5em;
+}
+.main-text p:first-of-type{
+  text-indent:0;
 }
 .drop-cap{
   float:left;
-  font-size:3.2rem;
-  line-height:0.8;
-  padding-top:4px;
-  padding-right:8px;
-  font-weight:bold;
+  font-family:"Playfair Display", serif;
+  font-size:4rem;
+  line-height:0.75;
+  padding-top:8px;
+  padding-right:10px;
+  font-weight:900;
+  color:#1a1410;
 }
 .continued{
   font-style:italic;
-  color:#666;
+  color:#3a3020;
   font-size:0.9rem;
   text-align:right;
-  margin-top:8px;
+  margin-top:10px;
+  font-weight:600;
+  border-top:1px solid #d4c4a8;
+  padding-top:6px;
 }
 
 /* -------- Right Column -------- */
@@ -180,124 +243,161 @@ aside{
 .highlight{
   flex:0 0 465px;
   overflow:hidden;
+  border:2px solid #5a4a3a;
+  padding:12px;
+  background:#ebe0cc;
+  box-shadow:inset 0 0 15px rgba(0,0,0,0.08);
 }
 .highlight-img{
   width:100%;
   height:180px;
-  border:1px solid #444;
-  background:#e5e5e5 center/cover no-repeat;
-  margin-bottom:8px;
+  border:3px solid #2c2416;
+  background:#d4c4a8 center/cover no-repeat;
+  margin-bottom:10px;
   cursor:pointer;
-  transition:all 0.2s ease;
+  transition:all 0.3s ease;
   background-size:cover;
   background-position:center;
+  filter:sepia(0.4) contrast(1.15) grayscale(0.3);
+  box-shadow:2px 2px 0px rgba(0,0,0,0.1);
 }
 .highlight-img:hover{
-  opacity:0.9;
-  outline:2px solid #b58900;
+  filter:sepia(0.2) contrast(1.1) grayscale(0.1);
+  outline:2px solid #8b7355;
 }
 .highlight strong{
   display:block;
-  margin-bottom:6px;
+  margin-bottom:8px;
   font-size:1rem;
   line-height:1.3;
+  font-family:"Playfair Display", serif;
+  font-weight:700;
+  color:#1a1410;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+  text-align:center;
 }
 .highlight span{
   display:block;
   text-align:justify;
-  line-height:1.45;
-  font-size:0.92rem;
+  line-height:1.5;
+  font-size:0.9rem;
+  color:#2c2416;
+  text-indent:1em;
 }
 .inside-issue{
   flex:1;
-  border:2px solid #000;
-  background:#f3f1ec;
-  padding:12px 15px;
+  border:3px double #2c2416;
+  background:#ebe0cc;
+  padding:15px;
   overflow:hidden;
-  font-size:0.88rem;
-  line-height:1.5;
+  font-size:0.86rem;
+  line-height:1.6;
   box-sizing:border-box;
+  box-shadow:inset 0 0 15px rgba(0,0,0,0.08);
 }
 .inside-issue strong{
   display:block;
   text-align:center;
-  margin-bottom:10px;
+  margin-bottom:12px;
   text-transform:uppercase;
-  border-bottom:2px solid #000;
-  padding-bottom:6px;
+  border-bottom:3px double #2c2416;
+  padding-bottom:8px;
   font-size:0.95rem;
-  letter-spacing:0.5px;
+  letter-spacing:2px;
+  font-family:"Cinzel", serif;
+  font-weight:700;
+  color:#1a1410;
 }
 
-/* -------- Three Lower Stories -------- */
+/* -------- Lower Stories -------- */
 .lower{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:15px;
-  height:385px; /* Optimized to prevent footer collision */
-  margin-bottom:25px; /* Proper footer clearance */
+  gap:18px;
+  height:385px;
+  margin-bottom:25px;
+  border-top:3px solid #2c2416;
+  padding-top:15px;
 }
 .story-block{
-  border-top:2px solid #000;
-  padding-top:8px;
-  font-size:0.92rem;
-  line-height:1.45;
+  font-size:0.9rem;
+  line-height:1.5;
   overflow:hidden;
   box-sizing:border-box;
+  background:#ebe0cc;
+  padding:12px;
+  box-shadow:0 2px 5px rgba(0,0,0,0.15);
+  border-right:2px solid #d4c4a8;
+}
+.story-block:last-child{
+  border-right:none;
 }
 .story-img{
   width:100%;
   height:125px;
-  border:1px solid #444;
-  background:#e5e5e5 center/cover no-repeat;
-  margin-bottom:6px;
+  border:3px solid #2c2416;
+  background:#d4c4a8 center/cover no-repeat;
+  margin-bottom:8px;
   cursor:pointer;
-  transition:all 0.2s ease;
+  transition:all 0.3s ease;
   background-size:cover;
   background-position:center;
+  filter:sepia(0.4) contrast(1.15) grayscale(0.3);
+  box-shadow:2px 2px 0px rgba(0,0,0,0.1);
 }
 .story-img:hover{
-  opacity:0.9;
-  outline:2px solid #b58900;
+  filter:sepia(0.2) contrast(1.1) grayscale(0.1);
+  outline:2px solid #8b7355;
 }
 .story-block strong{
   display:block;
-  margin-bottom:6px;
-  font-size:1rem;
-  line-height:1.2;
+  margin-bottom:8px;
+  font-size:0.98rem;
+  line-height:1.25;
   text-transform:uppercase;
+  font-family:"Playfair Display", serif;
+  font-weight:700;
+  color:#1a1410;
+  letter-spacing:0.5px;
+  text-align:center;
 }
 .story-block p{
   margin:0 0 6px 0;
   text-align:justify;
+  color:#2c2416;
+  text-indent:1em;
 }
 
 /* -------- Footer -------- */
 footer{
   text-align:center;
-  border-top:3px double #000;
-  padding-top:20px; /* Increased spacing from bar */
-  font-size:0.9rem;
+  border-top:6px double #2c2416;
+  padding-top:20px;
+  font-size:0.88rem;
   box-sizing:border-box;
   position:absolute;
   bottom:30px;
   left:60px;
   right:60px;
+  color:#2c2416;
 }
 footer a{
-  color:#000;
+  color:#1a1410;
   text-decoration:none;
-  border-bottom:1px solid #000;
+  border-bottom:1px solid #2c2416;
+  font-weight:600;
 }
 footer a:hover{
-  color:#b58900;
-  border-bottom-color:#b58900;
+  color:#8b7355;
+  border-bottom-color:#8b7355;
 }
 footer em{
   font-style:italic;
-  font-size:0.85rem;
+  font-size:0.82rem;
   display:block;
   margin-top:12px;
+  color:#3a3020;
 }
 
 /* -------- Image Editor Modal -------- */
@@ -308,7 +408,7 @@ footer em{
   left:0;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.9);
+  background:rgba(44,36,22,0.95);
   z-index:2000;
   align-items:center;
   justify-content:center;
@@ -317,28 +417,32 @@ footer em{
   display:flex;
 }
 .editor-content{
-  background:#fff;
+  background:#f4ecd8;
   padding:25px;
   border-radius:8px;
+  border:3px solid #2c2416;
   max-width:650px;
   width:90%;
+  color:#2c2416;
 }
 .editor-content h3{
   margin-top:0;
   text-align:center;
-  border-bottom:2px solid #000;
-  padding-bottom:10px;
+  border-bottom:3px double #2c2416;
+  padding-bottom:12px;
+  font-family:"Playfair Display", serif;
+  color:#1a1410;
 }
 .editor-preview{
   width:100%;
   height:300px;
-  background:#333;
+  background:#5a4a3a;
   display:flex;
   align-items:center;
   justify-content:center;
   overflow:hidden;
   margin-bottom:15px;
-  border:1px solid #ccc;
+  border:2px solid #2c2416;
 }
 .editor-controls{
   display:grid;
@@ -348,22 +452,24 @@ footer em{
 }
 .editor-controls button{
   padding:10px 12px;
-  font-size:0.9rem;
-  border:1px solid #333;
-  background:#f8f8f8;
+  font-size:0.88rem;
+  border:2px solid #2c2416;
+  background:#ebe0cc;
+  color:#2c2416;
   cursor:pointer;
   border-radius:4px;
-  font-family:"Times New Roman",serif;
+  font-family:"Playfair Display", serif;
+  font-weight:600;
 }
 .editor-controls button:hover{
-  background:#e0e0e0;
+  background:#d4c4a8;
 }
 .editor-actions{
   display:flex;
   gap:10px;
   justify-content:flex-end;
   margin-top:15px;
-  border-top:1px solid #eee;
+  border-top:2px solid #5a4a3a;
   padding-top:15px;
 }
 </style>
@@ -373,22 +479,22 @@ footer em{
 
 <!-- Action Buttons -->
 <div class="action-buttons">
-  <button class="action-btn" onclick="saveNewspaper()">💾 Save Image</button>
-  <button class="action-btn" onclick="shareNewspaper()">📤 Share</button>
+  <button class="action-btn" onclick="saveNewspaper()">💾 Save Archive</button>
+  <button class="action-btn" onclick="shareNewspaper()">📤 Share Heritage</button>
 </div>
 
 <div id="page">
 
 <header>
-  <h1>FASHION WEEK SACRAMENTO</h1>
-  <p>Sacramento, California • Issue Date: January 19, 2026 • Volume 21 No 1 • Live Casting Edition</p>
+  <h1>Fashion Week Sacramento</h1>
+  <p>Sacramento, California • Est. MMV • January 19, 2026 • Vol. XXI No. I • Heritage Casting Edition</p>
 </header>
 
 <div class="content">
 
   <!-- MAIN STORY -->
   <section class="main-story">
-    <h2>RUNWAY STARS DISCOVERED AT MORNING CASTING FOR FASHION WEEK SACRAMENTO</h2>
+    <h2>Runway Stars Discovered at Morning Casting for Fashion Week Sacramento</h2>
     <h3>Morning casting session uncovers rising talent ready to redefine Sacramento's fashion narrative</h3>
     
     <!-- CLICKABLE MAIN PHOTO -->
@@ -417,14 +523,14 @@ footer em{
   <aside>
     <div class="highlight">
       <div class="highlight-img" id="highlightImg" onclick="uploadImage('highlightImg', 350, 180)"></div>
-      <strong>FASHION WEEK RETURNS MARCH 14 AT RAILROAD MUSEUM</strong>
+      <strong>Fashion Week Returns March 14 at Railroad Museum</strong>
       <span>
         Sacramento's 21st annual Fashion Week transforms the historic California State Railroad Museum into a cutting-edge fashion showcase featuring over fifteen regional designers scheduled to take the stage, closing out the week on Saturday, March 14th. The event celebrates sustainable innovation, cultural storytelling, and the dynamic intersection of technology with traditional craftsmanship. Tickets go on sale February 1st.
       </span>
     </div>
 
     <div class="inside-issue">
-      <strong>INSIDE THIS ISSUE</strong>
+      <strong>Inside This Issue</strong>
       • <strong>Casting Day Gallery</strong> — Behind-the-scenes photos from today's selection process and standout moments that caught the panel's attention. <em>Page 2</em><br><br>
       • <strong>Designer Spotlight</strong> — Meet the innovators creating collections from upcycled materials, botanical dyes, and smart textiles. <em>Page 3</em><br><br>
       • <strong>Model Training Preview</strong> — What selected participants can expect from the intensive February workshop series. <em>Page 4</em><br><br>
@@ -488,7 +594,7 @@ footer em{
       <button onclick="fitToFrame()">⬚ Fit Frame</button>
     </div>
     <div class="editor-actions">
-      <button class="action-btn" style="background:#666;" onclick="closeEditor()">Cancel</button>
+      <button class="action-btn" style="background:#5a4a3a;" onclick="closeEditor()">Cancel</button>
       <button class="action-btn" onclick="applyImage()">Apply Photo</button>
     </div>
   </div>
@@ -549,6 +655,10 @@ function openEditor() {
 
 function drawEditor() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  // Apply vintage filter in preview
+  ctx.filter = 'sepia(0.4) contrast(1.15) grayscale(0.3)';
+  
   ctx.drawImage(
     currentImageObj, 
     editorState.x, 
@@ -556,6 +666,8 @@ function drawEditor() {
     currentImageObj.width * editorState.scale, 
     currentImageObj.height * editorState.scale
   );
+  
+  ctx.filter = 'none';
 }
 
 function adjustEditor(action) {
@@ -625,11 +737,11 @@ async function saveNewspaper() {
       scale: 2,
       useCORS: true,
       logging: false,
-      backgroundColor: '#fdfbf7'
+      backgroundColor: '#f4ecd8'
     });
     
     const link = document.createElement('a');
-    link.download = `Fashion-Week-Sacramento-${new Date().getTime()}.png`;
+    link.download = `Fashion-Week-Sacramento-Heritage-${new Date().getTime()}.png`;
     link.href = canvas.toDataURL('image/png', 1.0);
     link.click();
   } catch (error) {
@@ -649,18 +761,18 @@ async function shareNewspaper() {
       scale: 2,
       useCORS: true,
       logging: false,
-      backgroundColor: '#fdfbf7'
+      backgroundColor: '#f4ecd8'
     });
     
     canvas.toBlob(async (blob) => {
-      const file = new File([blob], 'fashion-week-sacramento.png', { type: 'image/png' });
+      const file = new File([blob], 'fashion-week-sacramento-heritage.png', { type: 'image/png' });
       
       if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
         try {
           await navigator.share({
             files: [file],
-            title: 'Fashion Week Sacramento 2026',
-            text: 'Check out my feature in Fashion Week Sacramento!'
+            title: 'Fashion Week Sacramento 2026 - Heritage Edition',
+            text: 'Featured in Fashion Week Sacramento Heritage Edition!'
           });
         } catch (err) {
           if (err.name !== 'AbortError') {
@@ -680,7 +792,7 @@ async function shareNewspaper() {
 
 function fallbackShare(canvas) {
   const link = document.createElement('a');
-  link.download = `Fashion-Week-Sacramento-Share-${new Date().getTime()}.png`;
+  link.download = `Fashion-Week-Sacramento-Heritage-Share-${new Date().getTime()}.png`;
   link.href = canvas.toDataURL('image/png', 1.0);
   link.click();
   alert('Image saved! You can now share it from your device.');
