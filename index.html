@@ -21,7 +21,7 @@ body{
   position:relative;
   overflow:hidden;
   box-sizing:border-box;
-  padding:55px 60px 50px 60px;
+  padding:55px 60px 45px 60px;
 }
 
 /* -------- Action Buttons -------- */
@@ -45,11 +45,11 @@ body{
   transition:all 0.2s ease;
   text-decoration:none;
   display:inline-block;
+  box-shadow:0 2px 5px rgba(0,0,0,0.3);
 }
 .action-btn:hover{
   background:#b58900;
   transform:translateY(-2px);
-  box-shadow:0 4px 8px rgba(0,0,0,0.3);
 }
 
 /* -------- Masthead -------- */
@@ -58,7 +58,7 @@ header{
   border-top:4px double #000;
   border-bottom:4px double #000;
   padding:12px 0;
-  margin-bottom:15px;
+  margin-bottom:18px;
 }
 header h1{
   margin:0;
@@ -94,17 +94,18 @@ header p{
   font-size:1.7rem;
   font-weight:bold;
   border-bottom:1px solid #555;
-  padding-bottom:5px;
+  padding-bottom:8px;
   margin-top:0;
-  margin-bottom:8px;
+  margin-bottom:15px;
   line-height:1.1;
 }
 .main-story h3{
   text-align:center;
   font-size:0.95rem;
   font-style:italic;
-  margin:8px 0 12px;
+  margin:0 0 18px 0;
   color:#444;
+  line-height:1.3;
 }
 .main-photo{
   width:100%;
@@ -116,16 +117,17 @@ header p{
   justify-content:center;
   color:#999;
   font-style:italic;
-  margin:8px 0 6px;
+  margin:0 0 8px;
   font-size:0.85rem;
   cursor:pointer;
-  transition:opacity 0.2s ease;
+  transition:all 0.2s ease;
   position:relative;
   background-size:cover;
   background-position:center;
 }
 .main-photo:hover{
   opacity:0.9;
+  outline:2px solid #b58900;
 }
 .main-photo.has-image{
   color:transparent;
@@ -136,7 +138,7 @@ header p{
   color:#555;
   margin-bottom:12px;
   border-bottom:1px solid #ddd;
-  padding-bottom:4px;
+  padding-bottom:6px;
 }
 .main-text{
   height:380px;
@@ -163,10 +165,11 @@ header p{
   font-style:italic;
   color:#666;
   font-size:0.9rem;
+  text-align:right;
   margin-top:8px;
 }
 
-/* -------- Right Column (Highlight + Inside Issue) -------- */
+/* -------- Right Column -------- */
 aside{
   height:100%;
   overflow:hidden;
@@ -185,12 +188,13 @@ aside{
   background:#e5e5e5 center/cover no-repeat;
   margin-bottom:8px;
   cursor:pointer;
-  transition:opacity 0.2s ease;
+  transition:all 0.2s ease;
   background-size:cover;
   background-position:center;
 }
 .highlight-img:hover{
   opacity:0.9;
+  outline:2px solid #b58900;
 }
 .highlight strong{
   display:block;
@@ -230,8 +234,8 @@ aside{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:15px;
-  height:380px;
-  margin-bottom:25px;
+  height:385px; /* Optimized to prevent footer collision */
+  margin-bottom:25px; /* Proper footer clearance */
 }
 .story-block{
   border-top:2px solid #000;
@@ -248,12 +252,13 @@ aside{
   background:#e5e5e5 center/cover no-repeat;
   margin-bottom:6px;
   cursor:pointer;
-  transition:opacity 0.2s ease;
+  transition:all 0.2s ease;
   background-size:cover;
   background-position:center;
 }
 .story-img:hover{
   opacity:0.9;
+  outline:2px solid #b58900;
 }
 .story-block strong{
   display:block;
@@ -263,7 +268,7 @@ aside{
   text-transform:uppercase;
 }
 .story-block p{
-  margin:0;
+  margin:0 0 6px 0;
   text-align:justify;
 }
 
@@ -271,11 +276,11 @@ aside{
 footer{
   text-align:center;
   border-top:3px double #000;
-  padding-top:12px;
+  padding-top:20px; /* Increased spacing from bar */
   font-size:0.9rem;
   box-sizing:border-box;
   position:absolute;
-  bottom:25px;
+  bottom:30px;
   left:60px;
   right:60px;
 }
@@ -292,7 +297,7 @@ footer em{
   font-style:italic;
   font-size:0.85rem;
   display:block;
-  margin-top:8px;
+  margin-top:12px;
 }
 
 /* -------- Image Editor Modal -------- */
@@ -313,40 +318,53 @@ footer em{
 }
 .editor-content{
   background:#fff;
-  padding:30px;
+  padding:25px;
   border-radius:8px;
-  max-width:600px;
+  max-width:650px;
   width:90%;
+}
+.editor-content h3{
+  margin-top:0;
+  text-align:center;
+  border-bottom:2px solid #000;
+  padding-bottom:10px;
 }
 .editor-preview{
   width:100%;
-  max-height:300px;
-  border:2px solid #333;
-  margin-bottom:20px;
+  height:300px;
+  background:#333;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   overflow:hidden;
-  position:relative;
-}
-.editor-preview img{
-  width:100%;
-  height:auto;
-  display:block;
-  cursor:move;
+  margin-bottom:15px;
+  border:1px solid #ccc;
 }
 .editor-controls{
-  display:flex;
-  gap:10px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
   margin-bottom:15px;
-  flex-wrap:wrap;
 }
 .editor-controls button{
-  padding:8px 15px;
+  padding:10px 12px;
   font-size:0.9rem;
   border:1px solid #333;
-  background:#fff;
+  background:#f8f8f8;
   cursor:pointer;
+  border-radius:4px;
+  font-family:"Times New Roman",serif;
 }
 .editor-controls button:hover{
-  background:#f0f0f0;
+  background:#e0e0e0;
+}
+.editor-actions{
+  display:flex;
+  gap:10px;
+  justify-content:flex-end;
+  margin-top:15px;
+  border-top:1px solid #eee;
+  padding-top:15px;
 }
 </style>
 </head>
@@ -389,7 +407,8 @@ footer em{
       
       <p>"What we're seeing today goes beyond traditional beauty standards," Mitran explained as models cycled through their walks. "We're looking for models who can not only walk but transform themselves into the designer's vision and help tell their story."</p>
       
-      <p>The selection process combines technical evaluation with artistic vision. Each model poses for digital headshots and performs a basic walk followed by a more dramatic presentation with attitude for the designers in attendance, which is also captured on camera for out-of-town designers. Selected participants will join intensive training workshops throughout February.</p>
+      <p>The selection process combines technical evaluation with artistic vision. Each model poses for digital headshots and performs a basic walk followed by a more dramatic presentation with attitude for the designers in attendance.</p>
+      
       <div class="continued"><em>Continued on Page 2</em></div>
     </div>
   </section>
@@ -427,14 +446,14 @@ footer em{
   <div class="story-block">
     <div class="story-img" id="story2Img" onclick="uploadImage('story2Img', 330, 125)"></div>
     <strong>Regalia in Bloom Presented as The Regalia Chamber</strong>
-    <p>Regalia in Bloom, photographer Trin De's ongoing exploration of adornment as authority, presents an installation at Fashion Week Sacramento 2026 through The Regalia Chamber, a site-specific exhibition which draws from the Regalia Archives, a curated collection stewarded by Work of Heart Studio, Fashion Week Sacramento's Day One model casting venue. The installation showcases De's ability to create evocative scenes while presenting samples of the extraordinary wardrobe available for commissioned photography work.</p>
+    <p>Regalia in Bloom, photographer Trin De's ongoing exploration of adornment as authority, presents an installation at Fashion Week Sacramento 2026 through The Regalia Chamber, a site-specific exhibition which draws from the Regalia Archives, a curated collection stewarded by Work of Heart Studio. The installation showcases De's ability to create evocative scenes while presenting samples of the extraordinary wardrobe available for commissioned photography work.</p>
     <div class="continued"><em>Feature story on Page 4</em></div>
   </div>
 
   <div class="story-block">
     <div class="story-img" id="story3Img" onclick="uploadImage('story3Img', 330, 125)"></div>
     <strong>Two Decades of Fashion in the Capital</strong>
-    <p>For two decades, DMR Productions has transformed Fashion Week Sacramento into a collaborative platform that unites the region's creative community. Producer Duane Ram's commitment to nurturing emerging talent extends through ongoing partnerships with academic fashion programs at Sacramento State and Delta College, providing students real-world runway experience alongside established professionals. The event's evolution reflects Sacramento's growing influence as a fashion destination.</p>
+    <p>For two decades, DMR Productions has transformed Fashion Week Sacramento into a collaborative platform that unites the region's creative community. Producer Duane Ram's commitment to nurturing emerging talent extends through ongoing partnerships with academic fashion programs at Sacramento State and Delta College, providing students real-world runway experience alongside established professionals.</p>
     <div class="continued"><em>Anniversary retrospective on Page 8</em></div>
   </div>
 </div>
@@ -454,19 +473,22 @@ footer em{
 <!-- Image Editor Modal -->
 <div class="editor-modal" id="editorModal">
   <div class="editor-content">
-    <h2 style="margin-top:0;">Position Your Photo</h2>
-    <div class="editor-preview" id="editorPreview"></div>
-    <div class="editor-controls">
-      <button onclick="adjustImage('scale', 0.1)">Zoom In</button>
-      <button onclick="adjustImage('scale', -0.1)">Zoom Out</button>
-      <button onclick="adjustImage('x', -10)">← Move Left</button>
-      <button onclick="adjustImage('x', 10)">Move Right →</button>
-      <button onclick="adjustImage('y', -10)">↑ Move Up</button>
-      <button onclick="adjustImage('y', 10)">Move Down ↓</button>
-      <button onclick="resetImage()">Reset</button>
+    <h3>Position Your Photo</h3>
+    <div class="editor-preview">
+      <canvas id="editorCanvas"></canvas>
     </div>
-    <div style="display:flex; gap:10px; justify-content:flex-end; margin-top:20px;">
-      <button class="action-btn" onclick="closeEditor()">Cancel</button>
+    <div class="editor-controls">
+      <button onclick="adjustEditor('zoomIn')">🔍 Zoom In</button>
+      <button onclick="adjustEditor('zoomOut')">🔍 Zoom Out</button>
+      <button onclick="adjustEditor('left')">← Move Left</button>
+      <button onclick="adjustEditor('right')">Move Right →</button>
+      <button onclick="adjustEditor('up')">↑ Move Up</button>
+      <button onclick="adjustEditor('down')">Move Down ↓</button>
+      <button onclick="resetEditor()">⟲ Reset</button>
+      <button onclick="fitToFrame()">⬚ Fit Frame</button>
+    </div>
+    <div class="editor-actions">
+      <button class="action-btn" style="background:#666;" onclick="closeEditor()">Cancel</button>
       <button class="action-btn" onclick="applyImage()">Apply Photo</button>
     </div>
   </div>
@@ -479,12 +501,9 @@ footer em{
 
 <script>
 let currentTarget = null;
-let currentImage = null;
-let imageSettings = {
-  scale: 1,
-  x: 0,
-  y: 0
-};
+let currentImageObj = null;
+let editorState = { scale: 1, x: 0, y: 0 };
+let canvas, ctx;
 
 function uploadImage(elementId, width, height) {
   currentTarget = {id: elementId, width: width, height: height};
@@ -495,78 +514,114 @@ document.getElementById('fileInput').addEventListener('change', function(e) {
   if (e.target.files && e.target.files[0] && currentTarget) {
     const reader = new FileReader();
     reader.onload = function(event) {
-      currentImage = event.target.result;
-      imageSettings = {scale: 1, x: 0, y: 0};
-      showEditor();
+      const img = new Image();
+      img.onload = function() {
+        currentImageObj = img;
+        openEditor();
+      };
+      img.src = event.target.result;
     };
     reader.readAsDataURL(e.target.files[0]);
   }
 });
 
-function showEditor() {
+function openEditor() {
   const modal = document.getElementById('editorModal');
-  const preview = document.getElementById('editorPreview');
-  preview.style.width = currentTarget.width + 'px';
-  preview.style.height = currentTarget.height + 'px';
-  preview.innerHTML = `<img src="${currentImage}" id="editImage" style="transform: scale(${imageSettings.scale}) translate(${imageSettings.x}px, ${imageSettings.y}px);">`;
+  canvas = document.getElementById('editorCanvas');
+  ctx = canvas.getContext('2d');
+  
+  canvas.width = currentTarget.width;
+  canvas.height = currentTarget.height;
+  
+  const scaleX = canvas.width / currentImageObj.width;
+  const scaleY = canvas.height / currentImageObj.height;
+  const initialScale = Math.max(scaleX, scaleY);
+  
+  editorState = { 
+    scale: initialScale, 
+    x: (canvas.width - currentImageObj.width * initialScale) / 2,
+    y: (canvas.height - currentImageObj.height * initialScale) / 2
+  };
+
+  drawEditor();
   modal.classList.add('active');
 }
 
-function adjustImage(type, value) {
-  if (type === 'scale') {
-    imageSettings.scale = Math.max(0.1, imageSettings.scale + value);
-  } else if (type === 'x') {
-    imageSettings.x += value;
-  } else if (type === 'y') {
-    imageSettings.y += value;
-  }
-  const img = document.getElementById('editImage');
-  img.style.transform = `scale(${imageSettings.scale}) translate(${imageSettings.x}px, ${imageSettings.y}px)`;
+function drawEditor() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(
+    currentImageObj, 
+    editorState.x, 
+    editorState.y, 
+    currentImageObj.width * editorState.scale, 
+    currentImageObj.height * editorState.scale
+  );
 }
 
-function resetImage() {
-  imageSettings = {scale: 1, x: 0, y: 0};
-  const img = document.getElementById('editImage');
-  img.style.transform = `scale(1) translate(0px, 0px)`;
+function adjustEditor(action) {
+  const moveStep = 10;
+  const zoomStep = 0.05;
+  
+  switch(action) {
+    case 'zoomIn': editorState.scale += zoomStep; break;
+    case 'zoomOut': editorState.scale = Math.max(0.1, editorState.scale - zoomStep); break;
+    case 'left': editorState.x -= moveStep; break;
+    case 'right': editorState.x += moveStep; break;
+    case 'up': editorState.y -= moveStep; break;
+    case 'down': editorState.y += moveStep; break;
+  }
+  drawEditor();
+}
+
+function resetEditor() {
+  const scaleX = canvas.width / currentImageObj.width;
+  const scaleY = canvas.height / currentImageObj.height;
+  const initialScale = Math.max(scaleX, scaleY);
+  
+  editorState = { 
+    scale: initialScale, 
+    x: (canvas.width - currentImageObj.width * initialScale) / 2,
+    y: (canvas.height - currentImageObj.height * initialScale) / 2
+  };
+  drawEditor();
+}
+
+function fitToFrame() {
+  const scaleX = canvas.width / currentImageObj.width;
+  const scaleY = canvas.height / currentImageObj.height;
+  const fitScale = Math.min(scaleX, scaleY);
+  
+  editorState = { 
+    scale: fitScale, 
+    x: (canvas.width - currentImageObj.width * fitScale) / 2,
+    y: (canvas.height - currentImageObj.height * fitScale) / 2
+  };
+  drawEditor();
 }
 
 function applyImage() {
   const element = document.getElementById(currentTarget.id);
-  const canvas = document.createElement('canvas');
-  canvas.width = currentTarget.width;
-  canvas.height = currentTarget.height;
-  const ctx = canvas.getContext('2d');
-  
-  const img = new Image();
-  img.onload = function() {
-    ctx.save();
-    ctx.translate(canvas.width/2, canvas.height/2);
-    ctx.scale(imageSettings.scale, imageSettings.scale);
-    ctx.translate(imageSettings.x, imageSettings.y);
-    ctx.translate(-canvas.width/2, -canvas.height/2);
-    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-    ctx.restore();
-    
-    element.style.backgroundImage = `url(${canvas.toDataURL()})`;
-    element.classList.add('has-image');
-    element.textContent = '';
-    closeEditor();
-  };
-  img.src = currentImage;
+  element.style.backgroundImage = `url(${canvas.toDataURL('image/jpeg', 0.95)})`;
+  element.classList.add('has-image');
+  element.textContent = '';
+  closeEditor();
 }
 
 function closeEditor() {
   document.getElementById('editorModal').classList.remove('active');
   document.getElementById('fileInput').value = '';
+  canvas = null;
+  ctx = null;
+  currentImageObj = null;
 }
 
 async function saveNewspaper() {
-  // Hide buttons during capture
   const buttons = document.querySelector('.action-buttons');
   buttons.style.display = 'none';
   
   try {
-    const canvas = await html2canvas(document.getElementById('page'), {
+    const page = document.getElementById('page');
+    const canvas = await html2canvas(page, {
       scale: 2,
       useCORS: true,
       logging: false,
@@ -589,7 +644,8 @@ async function shareNewspaper() {
   buttons.style.display = 'none';
   
   try {
-    const canvas = await html2canvas(document.getElementById('page'), {
+    const page = document.getElementById('page');
+    const canvas = await html2canvas(page, {
       scale: 2,
       useCORS: true,
       logging: false,
