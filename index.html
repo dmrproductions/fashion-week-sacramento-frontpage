@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=1100"/>
+<meta name="viewport" content="width=1100, user-scalable=no"/>
 <title>Fashion Week Sacramento | Live Casting Edition</title>
 <style>
 body{
   margin:0;
   background:#dcd8cf;
   font-family:"Times New Roman",serif;
+  overflow-x:auto;
 }
 #page{
   width:1100px;
   height:1550px;
-  margin:0 auto;
+  margin:20px auto;
   background:#fdfbf7;
   border:8px solid #ccc;
   box-shadow:0 0 10px rgba(0,0,0,0.25);
@@ -21,6 +22,34 @@ body{
   overflow:hidden;
   box-sizing:border-box;
   padding:55px 60px 50px 60px;
+}
+
+/* -------- Action Buttons -------- */
+.action-buttons{
+  position:fixed;
+  top:20px;
+  right:20px;
+  z-index:1000;
+  display:flex;
+  gap:10px;
+}
+.action-btn{
+  background:#000;
+  color:#fff;
+  padding:12px 20px;
+  border:none;
+  border-radius:5px;
+  font-family:"Times New Roman",serif;
+  font-size:0.95rem;
+  cursor:pointer;
+  transition:all 0.2s ease;
+  text-decoration:none;
+  display:inline-block;
+}
+.action-btn:hover{
+  background:#b58900;
+  transform:translateY(-2px);
+  box-shadow:0 4px 8px rgba(0,0,0,0.3);
 }
 
 /* -------- Masthead -------- */
@@ -85,28 +114,21 @@ header p{
   display:flex;
   align-items:center;
   justify-content:center;
-  color:#666;
+  color:#999;
   font-style:italic;
   margin:8px 0 6px;
-  font-size:0.9rem;
+  font-size:0.85rem;
   cursor:pointer;
-  transition:all 0.2s ease;
+  transition:opacity 0.2s ease;
   position:relative;
+  background-size:cover;
+  background-position:center;
 }
 .main-photo:hover{
-  opacity:0.8;
-  outline:2px solid #b58900;
+  opacity:0.9;
 }
-.main-photo::after{
-  content:"Click to Upload Photo";
-  position:absolute;
-  bottom:8px;
-  right:10px;
-  background:rgba(0,0,0,0.7);
-  color:#fff;
-  font-size:0.75rem;
-  padding:3px 8px;
-  border-radius:3px;
+.main-photo.has-image{
+  color:transparent;
 }
 .photo-caption{
   font-size:0.82rem;
@@ -153,7 +175,7 @@ aside{
   gap:15px;
 }
 .highlight{
-  flex:0 0 470px; /* Reduced to prevent overflow */
+  flex:0 0 465px;
   overflow:hidden;
 }
 .highlight-img{
@@ -163,11 +185,12 @@ aside{
   background:#e5e5e5 center/cover no-repeat;
   margin-bottom:8px;
   cursor:pointer;
-  transition:all 0.2s ease;
+  transition:opacity 0.2s ease;
+  background-size:cover;
+  background-position:center;
 }
 .highlight-img:hover{
-  opacity:0.8;
-  outline:2px solid #b58900;
+  opacity:0.9;
 }
 .highlight strong{
   display:block;
@@ -225,11 +248,12 @@ aside{
   background:#e5e5e5 center/cover no-repeat;
   margin-bottom:6px;
   cursor:pointer;
-  transition:all 0.2s ease;
+  transition:opacity 0.2s ease;
+  background-size:cover;
+  background-position:center;
 }
 .story-img:hover{
-  opacity:0.8;
-  outline:2px solid #b58900;
+  opacity:0.9;
 }
 .story-block strong{
   display:block;
@@ -271,30 +295,70 @@ footer em{
   margin-top:8px;
 }
 
-/* -------- Mobile Responsiveness -------- */
-@media (max-width: 1150px) {
-  body { background: #fdfbf7; }
-  #page {
-    width: 100%; max-width: 100%; height: auto; border: none;
-    box-shadow: none; padding: 20px 15px 30px; margin: 0;
-  }
-  header h1 { font-size: 1.8rem; }
-  header p { font-size: 0.8rem; }
-  .content { display: block; height: auto; gap: 0; margin-bottom: 30px; }
-  .main-story { padding-right: 0; margin-bottom: 30px; height: auto; }
-  .main-story h2 { font-size: 1.4rem; }
-  .main-text { height: auto; font-size: 1rem; columns: 1; }
-  aside { height: auto; display: block; }
-  .highlight { margin-bottom: 25px; flex: none; height: auto; }
-  .inside-issue { flex: none; margin-bottom: 25px; height: auto; }
-  .lower { display: block; height: auto; margin-top: 30px; }
-  .story-block { margin-bottom: 25px; height: auto; }
-  footer { position: static; margin-top: 30px; padding: 15px 0 0; }
+/* -------- Image Editor Modal -------- */
+.editor-modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  z-index:2000;
+  align-items:center;
+  justify-content:center;
+}
+.editor-modal.active{
+  display:flex;
+}
+.editor-content{
+  background:#fff;
+  padding:30px;
+  border-radius:8px;
+  max-width:600px;
+  width:90%;
+}
+.editor-preview{
+  width:100%;
+  max-height:300px;
+  border:2px solid #333;
+  margin-bottom:20px;
+  overflow:hidden;
+  position:relative;
+}
+.editor-preview img{
+  width:100%;
+  height:auto;
+  display:block;
+  cursor:move;
+}
+.editor-controls{
+  display:flex;
+  gap:10px;
+  margin-bottom:15px;
+  flex-wrap:wrap;
+}
+.editor-controls button{
+  padding:8px 15px;
+  font-size:0.9rem;
+  border:1px solid #333;
+  background:#fff;
+  cursor:pointer;
+}
+.editor-controls button:hover{
+  background:#f0f0f0;
 }
 </style>
 </head>
 
 <body>
+
+<!-- Action Buttons -->
+<div class="action-buttons">
+  <button class="action-btn" onclick="saveNewspaper()">💾 Save Image</button>
+  <button class="action-btn" onclick="shareNewspaper()">📤 Share</button>
+</div>
+
 <div id="page">
 
 <header>
@@ -310,8 +374,8 @@ footer em{
     <h3>Morning casting session uncovers rising talent ready to redefine Sacramento's fashion narrative</h3>
     
     <!-- CLICKABLE MAIN PHOTO -->
-    <div class="main-photo" id="mainPhoto" onclick="uploadImage('mainPhoto')">
-      CLICK TO UPLOAD LIVE CASTING PHOTO
+    <div class="main-photo" id="mainPhoto" onclick="uploadImage('mainPhoto', 720, 310)">
+      [Insert Live Casting Photo]
     </div>
     
     <div class="photo-caption">
@@ -333,12 +397,10 @@ footer em{
   <!-- RIGHT COLUMN -->
   <aside>
     <div class="highlight">
-      <div class="highlight-img" id="highlightImg" onclick="uploadImage('highlightImg')" style="background-image:url('https://placehold.co/350x180?text=March+14+Runway+Preview');"></div>
+      <div class="highlight-img" id="highlightImg" onclick="uploadImage('highlightImg', 350, 180)"></div>
       <strong>FASHION WEEK RETURNS MARCH 14 AT RAILROAD MUSEUM</strong>
       <span>
-        Sacramento's 21st annual Fashion Week transforms the historic California State Railroad Museum into a cutting-edge fashion showcase featuring over fifteen regional designers scheduled to take the stage, closing out the week on Saturday, March 14th. The event celebrates sustainable innovation, cultural storytelling, and the dynamic intersection of technology with traditional craftsmanship.
-        <br><br>
-        Tickets go on sale February 1st through DMR Productions, with VIP packages offering premium access and exclusive experiences.
+        Sacramento's 21st annual Fashion Week transforms the historic California State Railroad Museum into a cutting-edge fashion showcase featuring over fifteen regional designers scheduled to take the stage, closing out the week on Saturday, March 14th. The event celebrates sustainable innovation, cultural storytelling, and the dynamic intersection of technology with traditional craftsmanship. Tickets go on sale February 1st.
       </span>
     </div>
 
@@ -356,21 +418,21 @@ footer em{
 <!-- LOWER STORIES -->
 <div class="lower">
   <div class="story-block">
-    <div class="story-img" id="story1Img" onclick="uploadImage('story1Img')" style="background-image:url('https://placehold.co/330x125?text=Final+Casting+Jan+24');"></div>
+    <div class="story-img" id="story1Img" onclick="uploadImage('story1Img', 330, 125)"></div>
     <strong>Day Two Model Casting: January 24 at Atrium Gallery</strong>
     <p>Fashion Week Sacramento 2026 holds its final casting session Saturday, January 24, at Old Sacramento's Atrium Gallery. The casting runs from 11 AM to 2 PM with walk-ins welcome. Models should wear fitted black attire with minimal accessories for digital portfolio shots and runway evaluation. You don't need to have an agent or prior experience. Selected participants receive spots on the March 14th runway and access to exclusive February training workshops.</p>
     <div class="continued"><em>Details on Page 7</em></div>
   </div>
 
   <div class="story-block">
-    <div class="story-img" id="story2Img" onclick="uploadImage('story2Img')" style="background-image:url('https://placehold.co/330x125?text=Work+of+Heart+Studio');"></div>
+    <div class="story-img" id="story2Img" onclick="uploadImage('story2Img', 330, 125)"></div>
     <strong>Regalia in Bloom Presented as The Regalia Chamber</strong>
     <p>Regalia in Bloom, photographer Trin De's ongoing exploration of adornment as authority, presents an installation at Fashion Week Sacramento 2026 through The Regalia Chamber, a site-specific exhibition which draws from the Regalia Archives, a curated collection stewarded by Work of Heart Studio, Fashion Week Sacramento's Day One model casting venue. The installation showcases De's ability to create evocative scenes while presenting samples of the extraordinary wardrobe available for commissioned photography work.</p>
     <div class="continued"><em>Feature story on Page 4</em></div>
   </div>
 
   <div class="story-block">
-    <div class="story-img" id="story3Img" onclick="uploadImage('story3Img')" style="background-image:url('https://placehold.co/330x125?text=Behind+the+Scenes');"></div>
+    <div class="story-img" id="story3Img" onclick="uploadImage('story3Img', 330, 125)"></div>
     <strong>Two Decades of Fashion in the Capital</strong>
     <p>For two decades, DMR Productions has transformed Fashion Week Sacramento into a collaborative platform that unites the region's creative community. Producer Duane Ram's commitment to nurturing emerging talent extends through ongoing partnerships with academic fashion programs at Sacramento State and Delta College, providing students real-world runway experience alongside established professionals. The event's evolution reflects Sacramento's growing influence as a fashion destination.</p>
     <div class="continued"><em>Anniversary retrospective on Page 8</em></div>
@@ -389,14 +451,43 @@ footer em{
 
 </div>
 
-<!-- Hidden file input for image uploads -->
+<!-- Image Editor Modal -->
+<div class="editor-modal" id="editorModal">
+  <div class="editor-content">
+    <h2 style="margin-top:0;">Position Your Photo</h2>
+    <div class="editor-preview" id="editorPreview"></div>
+    <div class="editor-controls">
+      <button onclick="adjustImage('scale', 0.1)">Zoom In</button>
+      <button onclick="adjustImage('scale', -0.1)">Zoom Out</button>
+      <button onclick="adjustImage('x', -10)">← Move Left</button>
+      <button onclick="adjustImage('x', 10)">Move Right →</button>
+      <button onclick="adjustImage('y', -10)">↑ Move Up</button>
+      <button onclick="adjustImage('y', 10)">Move Down ↓</button>
+      <button onclick="resetImage()">Reset</button>
+    </div>
+    <div style="display:flex; gap:10px; justify-content:flex-end; margin-top:20px;">
+      <button class="action-btn" onclick="closeEditor()">Cancel</button>
+      <button class="action-btn" onclick="applyImage()">Apply Photo</button>
+    </div>
+  </div>
+</div>
+
+<!-- Hidden file input -->
 <input type="file" id="fileInput" accept="image/*" style="display:none">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 <script>
 let currentTarget = null;
+let currentImage = null;
+let imageSettings = {
+  scale: 1,
+  x: 0,
+  y: 0
+};
 
-function uploadImage(elementId) {
-  currentTarget = elementId;
+function uploadImage(elementId, width, height) {
+  currentTarget = {id: elementId, width: width, height: height};
   document.getElementById('fileInput').click();
 }
 
@@ -404,15 +495,140 @@ document.getElementById('fileInput').addEventListener('change', function(e) {
   if (e.target.files && e.target.files[0] && currentTarget) {
     const reader = new FileReader();
     reader.onload = function(event) {
-      const element = document.getElementById(currentTarget);
-      element.style.backgroundImage = `url(${event.target.result})`;
-      if (currentTarget === 'mainPhoto') {
-        element.textContent = '';
-      }
+      currentImage = event.target.result;
+      imageSettings = {scale: 1, x: 0, y: 0};
+      showEditor();
     };
     reader.readAsDataURL(e.target.files[0]);
   }
 });
+
+function showEditor() {
+  const modal = document.getElementById('editorModal');
+  const preview = document.getElementById('editorPreview');
+  preview.style.width = currentTarget.width + 'px';
+  preview.style.height = currentTarget.height + 'px';
+  preview.innerHTML = `<img src="${currentImage}" id="editImage" style="transform: scale(${imageSettings.scale}) translate(${imageSettings.x}px, ${imageSettings.y}px);">`;
+  modal.classList.add('active');
+}
+
+function adjustImage(type, value) {
+  if (type === 'scale') {
+    imageSettings.scale = Math.max(0.1, imageSettings.scale + value);
+  } else if (type === 'x') {
+    imageSettings.x += value;
+  } else if (type === 'y') {
+    imageSettings.y += value;
+  }
+  const img = document.getElementById('editImage');
+  img.style.transform = `scale(${imageSettings.scale}) translate(${imageSettings.x}px, ${imageSettings.y}px)`;
+}
+
+function resetImage() {
+  imageSettings = {scale: 1, x: 0, y: 0};
+  const img = document.getElementById('editImage');
+  img.style.transform = `scale(1) translate(0px, 0px)`;
+}
+
+function applyImage() {
+  const element = document.getElementById(currentTarget.id);
+  const canvas = document.createElement('canvas');
+  canvas.width = currentTarget.width;
+  canvas.height = currentTarget.height;
+  const ctx = canvas.getContext('2d');
+  
+  const img = new Image();
+  img.onload = function() {
+    ctx.save();
+    ctx.translate(canvas.width/2, canvas.height/2);
+    ctx.scale(imageSettings.scale, imageSettings.scale);
+    ctx.translate(imageSettings.x, imageSettings.y);
+    ctx.translate(-canvas.width/2, -canvas.height/2);
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    ctx.restore();
+    
+    element.style.backgroundImage = `url(${canvas.toDataURL()})`;
+    element.classList.add('has-image');
+    element.textContent = '';
+    closeEditor();
+  };
+  img.src = currentImage;
+}
+
+function closeEditor() {
+  document.getElementById('editorModal').classList.remove('active');
+  document.getElementById('fileInput').value = '';
+}
+
+async function saveNewspaper() {
+  // Hide buttons during capture
+  const buttons = document.querySelector('.action-buttons');
+  buttons.style.display = 'none';
+  
+  try {
+    const canvas = await html2canvas(document.getElementById('page'), {
+      scale: 2,
+      useCORS: true,
+      logging: false,
+      backgroundColor: '#fdfbf7'
+    });
+    
+    const link = document.createElement('a');
+    link.download = `Fashion-Week-Sacramento-${new Date().getTime()}.png`;
+    link.href = canvas.toDataURL('image/png', 1.0);
+    link.click();
+  } catch (error) {
+    alert('Save failed. Please try taking a screenshot instead.');
+  } finally {
+    buttons.style.display = 'flex';
+  }
+}
+
+async function shareNewspaper() {
+  const buttons = document.querySelector('.action-buttons');
+  buttons.style.display = 'none';
+  
+  try {
+    const canvas = await html2canvas(document.getElementById('page'), {
+      scale: 2,
+      useCORS: true,
+      logging: false,
+      backgroundColor: '#fdfbf7'
+    });
+    
+    canvas.toBlob(async (blob) => {
+      const file = new File([blob], 'fashion-week-sacramento.png', { type: 'image/png' });
+      
+      if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+        try {
+          await navigator.share({
+            files: [file],
+            title: 'Fashion Week Sacramento 2026',
+            text: 'Check out my feature in Fashion Week Sacramento!'
+          });
+        } catch (err) {
+          if (err.name !== 'AbortError') {
+            fallbackShare(canvas);
+          }
+        }
+      } else {
+        fallbackShare(canvas);
+      }
+    }, 'image/png', 1.0);
+  } catch (error) {
+    alert('Share failed. Please use Save Image instead.');
+  } finally {
+    buttons.style.display = 'flex';
+  }
+}
+
+function fallbackShare(canvas) {
+  const link = document.createElement('a');
+  link.download = `Fashion-Week-Sacramento-Share-${new Date().getTime()}.png`;
+  link.href = canvas.toDataURL('image/png', 1.0);
+  link.click();
+  alert('Image saved! You can now share it from your device.');
+}
 </script>
 
 </body>
