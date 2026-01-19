@@ -5,194 +5,192 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Fashion Week Sacramento | Front Page</title>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
 <style>
-/* BASE */
-body {
-  margin: 0;
-  background: #dcd8cf;
-  font-family: "Times New Roman", serif;
-  color: #111;
+body{
+  margin:0;
+  background:#dcd8cf;
+  font-family:"Times New Roman",serif;
+  color:#111;
 }
-#page {
-  width: 900px;
-  max-width: 95%;
-  background: #fdfbf7;
-  margin: 40px auto;
-  padding: 40px 50px 80px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
-  border: 1px solid #aaa;
-}
-
-/* MASTHEAD */
-header {
-  text-align: center;
-  border-top: 4px double #000;
-  border-bottom: 4px double #000;
-  padding: 15px 0 10px;
-}
-header h1 {
-  font-size: 2.7rem;
-  font-weight: 900;
-  letter-spacing: 1px;
-  margin: 0;
-}
-header p {
-  font-size: 0.9rem;
-  font-style: italic;
-  margin-top: 3px;
+#page{
+  width:900px;
+  max-width:900px;
+  margin:40px auto;
+  background:#fdfbf7;
+  border:6px solid #ddd;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+  padding:40px 50px 80px;
+  box-sizing:border-box;
+  overflow:hidden;
 }
 
-/* TOP GRID */
-.top {
-  display: grid;
-  grid-template-columns: 2fr 0.85fr;
-  gap: 20px;
-  margin-top: 20px;
+/* ----- Masthead ----- */
+header{
+  background:#fdfbf7;
+  text-align:center;
+  border-top:4px double #000;
+  border-bottom:4px double #000;
+  padding:15px 0 10px;
 }
-.main-photo {
-  width: 100%;
-  height: 340px;
-  background: #e0dfdb center/cover no-repeat;
-  border: 1px solid #444;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666;
-  font-style: italic;
-  cursor: pointer;
+header h1{
+  font-size:2.7rem;
+  font-weight:900;
+  margin:0;
+  letter-spacing:1px;
 }
-.top h2 {
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  text-align: center;
-  border-bottom: 1px solid #666;
-  padding-bottom: 3px;
-  margin: 12px 0;
-}
-.top p {
-  text-align: justify;
-  line-height: 1.6;
-  font-size: 1rem;
+header p{
+  font-size:0.9rem;
+  font-style:italic;
+  margin-top:3px;
 }
 
-/* RIGHT SIDEBAR HIGHLIGHT */
-.highlight img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border: 1px solid #555;
-  margin-bottom: 6px;
-  cursor: pointer;
+/* ----- Top Feature Section ----- */
+.top{
+  display:grid;
+  grid-template-columns:68% 30%;
+  column-gap:2%;
+  margin-top:20px;
 }
-.highlight {
-  border-left: 1px solid #000;
-  padding-left: 12px;
-  font-size: 0.95rem;
+.main-photo{
+  width:100%;
+  height:340px;
+  background:#e0dfdb center/cover no-repeat;
+  border:1px solid #444;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#555;
+  font-style:italic;
+  cursor:pointer;
 }
-
-/* DIVIDER */
-hr.section {
-  border: none;
-  border-top: 2px solid #000;
-  margin: 28px 0 20px;
+.top h2{
+  font-size:1.6rem;
+  text-transform:uppercase;
+  text-align:center;
+  border-bottom:1px solid #666;
+  padding-bottom:3px;
+  margin:12px 0;
 }
-
-/* BOTTOM THREE COLUMNS */
-.bottom {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+.top p{
+  text-align:justify;
+  line-height:1.6;
+  font-size:1rem;
 }
-.story {
-  border-top: 1px solid #888;
-  padding-top: 8px;
+.highlight{
+  border-left:1px solid #000;
+  padding-left:10px;
+  font-size:0.95rem;
+  box-sizing:border-box;
 }
-.story img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border: 1px solid #444;
-  margin-bottom: 5px;
-  cursor: pointer;
-}
-.story strong {
-  display: block;
-  margin-bottom: 3px;
-  font-size: 1.05rem;
-}
-.story span {
-  display: block;
-  text-align: justify;
-  line-height: 1.45;
+.highlight img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border:1px solid #555;
+  margin-bottom:6px;
+  cursor:pointer;
 }
 
-/* FOOTER */
-footer {
-  border-top: 3px double #000;
-  text-align: center;
-  padding: 12px 10px;
-  margin-top: 25px;
-}
-footer img {
-  width: 120px;
-  display: block;
-  margin: 0 auto 6px;
-}
-footer a {
-  color: #000;
-  text-decoration: none;
-  border-bottom: 1px solid #000;
-}
-footer a:hover {
-  color: #b58900;
-  border-bottom-color: #b58900;
-}
-footer .line {
-  font-weight: bold;
-  margin-bottom: 4px;
-}
-footer .sub {
-  font-style: italic;
-  font-size: 0.85rem;
+/* ----- Divider Line ----- */
+hr.section{
+  border:none;
+  border-top:2px solid #000;
+  margin:30px 0 18px;
+  width:100%;
 }
 
-/* TOOLBAR */
-.toolbar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #111;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 10px;
-  z-index: 100;
+/* ----- Bottom 3 Stories ----- */
+.bottom{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  width:100%;
+  max-width:100%;
+  box-sizing:border-box;
 }
-.toolbar button {
-  background: gold;
-  border: none;
-  color: #000;
-  font-weight: bold;
-  padding: 8px 14px;
-  border-radius: 5px;
-  cursor: pointer;
+.story{
+  border-top:1px solid #999;
+  padding-top:8px;
 }
-.toolbar button:hover {
-  background: #e0b800;
+.story img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border:1px solid #444;
+  margin-bottom:5px;
+  cursor:pointer;
+}
+.story strong{
+  display:block;
+  margin-bottom:3px;
+  font-size:1.05rem;
+}
+.story span{
+  display:block;
+  text-align:justify;
+  line-height:1.45;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  #page {
-    padding: 20px;
-  }
-  .top {
-    grid-template-columns: 1fr;
-  }
-  .bottom {
-    grid-template-columns: 1fr;
-  }
+/* ----- Footer ----- */
+footer{
+  border-top:3px double #000;
+  text-align:center;
+  padding:12px 10px;
+  margin-top:25px;
+}
+footer img{
+  width:120px;
+  display:block;
+  margin:0 auto 5px;
+}
+footer a{
+  color:#000;
+  text-decoration:none;
+  border-bottom:1px solid #000;
+}
+footer a:hover{
+  color:#b58900;
+  border-bottom-color:#b58900;
+}
+footer .line{
+  font-weight:bold;
+  margin-bottom:4px;
+}
+footer .sub{
+  font-style:italic;
+  font-size:0.85rem;
+}
+
+/* ----- Toolbar Buttons ----- */
+.toolbar{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:#111;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  padding:10px;
+  z-index:100;
+}
+.toolbar button{
+  background:gold;
+  border:none;
+  color:#000;
+  font-weight:bold;
+  padding:8px 14px;
+  border-radius:5px;
+  cursor:pointer;
+}
+.toolbar button:hover{background:#e0b800}
+
+/* ----- Responsive (Mobile) ----- */
+@media(max-width:768px){
+  #page{padding:20px;}
+  .top{grid-template-columns:1fr;}
+  .bottom{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -210,12 +208,12 @@ footer .sub {
       <input type="file" id="mainFile" accept="image/*" style="display:none" />
       <h2 contenteditable="true">RUNWAY MODELS TURNED OUT FOR DAY ONE CASTING</h2>
       <p contenteditable="true">
-        Energy and excitement filled Work of Heart Studio on J Street as DMR Productions kicked off Day One of castings for Fashion Week Sacramento 2026. Stylists and judges praised the diversity and confidence of participants, setting a lively tone for the season.
+        Energy and excitement filled Work of Heart Studio on J Street as DMR Productions kicked off Day One of model castings for Fashion Week Sacramento 2026. Stylists and judges praised the diversity and confidence of participants, setting a lively tone for the season.
       </p>
     </div>
-    
+
     <aside class="highlight">
-      <img id="hImg" src="https://placehold.co/400x200?text=Highlight" alt="">
+      <img id="hImg" src="https://placehold.co/400x200?text=Highlight" alt="" />
       <input type="file" id="hFile" accept="image/*" style="display:none" />
       <strong contenteditable="true">FASHION WEEK RETURNS MARCH 14 AT THE RAILROAD MUSEUM</strong>
       <span contenteditable="true">
@@ -272,24 +270,23 @@ footer .sub {
   </footer>
 </div>
 
-<!-- Toolbar -->
 <div class="toolbar">
   <button id="downloadBtn">Download</button>
   <button id="shareBtn">Share</button>
 </div>
 
 <script>
-function bindUpload(el, input){
-  const e = document.getElementById(el);
-  const f = document.getElementById(input);
-  e.onclick = () => f.click();
-  f.onchange = (ev) => {
-    const file = ev.target.files[0];
-    if(!file) return;
-    const r = new FileReader();
-    r.onload = (x) => {
-      if(e.tagName === "IMG") e.src = x.target.result;
-      else { e.style.backgroundImage = `url(${x.target.result})`; e.textContent = ""; }
+function bindUpload(el,input){
+  const e=document.getElementById(el);
+  const f=document.getElementById(input);
+  e.onclick=()=>f.click();
+  f.onchange=(ev)=>{
+    const file=ev.target.files[0];
+    if(!file)return;
+    const r=new FileReader();
+    r.onload=(x)=>{
+      if(e.tagName==="IMG")e.src=x.target.result;
+      else{e.style.backgroundImage=`url(${x.target.result})`;e.textContent="";}
     };
     r.readAsDataURL(file);
   };
@@ -318,7 +315,7 @@ document.getElementById("shareBtn").addEventListener("click",()=>{
           text:"Check out my Fashion Week Sacramento newspaper cover!",
           files:[file]
         }).catch(()=>alert("Share canceled or unsupported."));
-      } else {
+      }else{
         const url=URL.createObjectURL(file);
         alert("Sharing not supported; file downloaded instead.");
         const a=document.createElement("a");
