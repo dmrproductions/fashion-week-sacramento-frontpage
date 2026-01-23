@@ -6,7 +6,7 @@
       content="width=device-width, height=device-height,
                initial-scale=1.0, maximum-scale=1.0,
                user-scalable=no" />
-<title>Fashion Week Sacramento | Mobile Edition</title>
+<title>FASHION WEEK SACRAMENTO | Final Casting Day Two @ The Atrium</title>
 <style>
 html,body{
   margin:0;padding:0;
@@ -15,43 +15,39 @@ html,body{
   background:#dcd8cf;
 }
 
-/* --- Full App Wrapper --- */
+/* Main App Container */
 #app{
   display:flex;
   flex-direction:column;
   align-items:center;
-  justify-content:flex-start;
-  width:100vw;
-  height:100vh;
-  max-height:100vh;
+  width:100vw;height:100vh;
   background:#fefdf9;
   overflow:hidden;
 }
 
-/* --- Masthead --- */
+/* Header */
 header{
   width:100%;
   text-align:center;
   border-top:4px double #000;
   border-bottom:4px double #000;
   background:#fff;
-  padding:1.5vh 0;
+  padding:1.2vh 0;
 }
 header h1{
   margin:0;
   font-size:5vw;
   font-weight:900;
-  letter-spacing:0.2vw;
 }
 header p{
-  margin:0.2vh 0 0;
+  margin:0.4vh 0 0;
   font-size:3vw;
   font-style:italic;
 }
 
-/* --- Main Story Image --- */
+/* Main Image */
 .main-img{
-  width:95%;
+  width:94%;
   aspect-ratio:16/9;
   background:#e0e0e0 center/cover no-repeat;
   margin:1.5vh auto;
@@ -72,109 +68,104 @@ header p{
   width:40px;height:40px;
 }
 
-/* --- Headline & Story --- */
+/* Headline */
 h2{
-  width:90%;
+  width:88%;
   margin:0;
   text-align:center;
-  font-size:4.5vw;
+  font-size:4.7vw;
   font-weight:bold;
+  line-height:1.2;
   border-bottom:1px solid #444;
-  padding-bottom:0.5vh;
+  padding-bottom:0.6vh;
 }
+
+/* Story Body */
 .story{
-  width:90%;
-  font-size:3.3vw;
-  line-height:1.55;
+  width:88%;
+  font-size:3.2vw;
+  line-height:1.5;
   text-align:justify;
   overflow:auto;
   margin-top:0.8vh;
-  height:22vh; /* fits smaller screens */
+  flex:1;
+  box-sizing:border-box;
+  padding-right:2vw;
+  word-wrap:break-word;
 }
 
-/* --- 3 Photo Boxes at Bottom --- */
+/* Photo Grid at Bottom */
 .photo-grid{
   display:flex;
   justify-content:space-between;
-  align-items:center;
   width:92%;
-  margin-top:1.5vh;
+  margin:1vh 0;
   gap:2%;
 }
 .small-photo{
   flex:1;
   aspect-ratio:1/1;
-  border:0.25vh solid #333;
   background:#e6e6e6 center/cover no-repeat;
+  border:0.25vh solid #333;
   border-radius:0.8vw;
-  position:relative;
   display:flex;
   align-items:center;
   justify-content:center;
   color:#666;
-  font-size:2.8vw;
+  font-size:3vw;
   font-style:italic;
   overflow:hidden;
+  position:relative;
 }
 .small-photo input[type=file]{
   position:absolute;
   bottom:1vh;left:1vh;
-  opacity:0;
-  width:30px;height:30px;
+  opacity:0;width:30px;height:30px;
 }
 
-/* --- Footer --- */
+/* Footer */
 footer{
   width:100%;
   text-align:center;
   border-top:3px double #000;
-  margin-top:1.5vh;
   font-size:2.8vw;
-  padding:1vh 0;
+  padding:0.8vh 0;
   background:#fff;
 }
 footer a{
-  color:#000;
-  text-decoration:none;
-  border-bottom:0.15vh solid #000;
+  color:#000;text-decoration:none;border-bottom:0.15vh solid #000;
 }
-footer a:hover{
-  color:#b58900;
-  border-bottom-color:#b58900;
-}
-footer em{
-  display:block;
-  font-size:2.5vw;
-  font-style:italic;
-}
+footer a:hover{color:#b58900;border-bottom-color:#b58900;}
+footer em{display:block;font-size:2.5vw;font-style:italic;margin-top:0.2vh;}
 </style>
 </head>
 
 <body>
 <div id="app">
 
-  <!-- Masthead -->
   <header>
     <h1>FASHION WEEK SACRAMENTO</h1>
-    <p>January 23 2026 • Volume 21 No 2</p>
+    <p>FINAL CASTING DAY TWO • JAN 23 2026</p>
   </header>
 
   <!-- Main Image -->
   <div class="main-img" id="mainImg" onclick="document.getElementById('mainFile').click()">
-    Tap to Insert Main Photo
+    Tap to Insert Main Photo
     <input type="file" id="mainFile" accept="image/*;capture=camera"
            onchange="setImage(event,'mainImg')" />
   </div>
 
-  <!-- Headline -->
-  <h2>RUNWAY MODELS IGNITE OPENING DAY CASTING</h2>
+  <!-- Updated Headline -->
+  <h2>FINAL CASTING FOR MODELS HELD AT THE ATRIUM</h2>
 
-  <!-- Main Story Text -->
+  <!-- Fixed Story Text Box -->
   <div class="story">
-    The Work of Heart Studio buzzed with anticipation as DMR Productions opened Fashion Week Sacramento 2026 castings. Aspiring models lined the street, bringing fresh energy and confidence to the runway selection process. Organizers say this season will highlight inclusive collections from emerging creatives across Northern California while celebrating the region’s culture and style.
+    Day Two of Fashion Week Sacramento’s model castings took place at The Atrium, a 501(c)(3) nonprofit creative center for sustainability and innovation. Serving as a community incubator built on the ethos of “doing business for good,” The Atrium encourages collaboration among artists, entrepreneurs, and educators to build a kinder, more sustainable future. 
+    <br><br>
+    The venue houses classes, events, and art studios dedicated to social impact and sustainability. During the final casting, models of all backgrounds brought their talent and creativity to the runway call, marking the culmination of this season’s selection process. DMR Productions continues its mission of cultivating diverse voices and innovating toward an omni‑considerate future for Sacramento’s growing fashion community.
   </div>
 
-  <!-- Bottom 3 Photo Slots -->
+  <!-- 3 Bottom Photo Boxes -->
   <div class="photo-grid">
     <div class="small-photo" id="p1" onclick="document.getElementById('f1').click()">
       +
@@ -193,7 +184,6 @@ footer em{
     </div>
   </div>
 
-  <!-- Footer -->
   <footer>
     <strong>
       DMR Productions • 
