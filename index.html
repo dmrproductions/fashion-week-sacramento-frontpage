@@ -1,771 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=1100, user-scalable=no"/>
-<title>Fashion Week Sacramento | Heritage Edition</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Fashion Week Sacramento - Heritage Edition</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-body{
-  margin:0;
-  background:#8b7355;
-  font-family:"Playfair Display", Georgia, "Times New Roman", serif;
-  overflow-x:auto;
-}
-#page{
-  width:1100px;
-  height:1550px;
-  margin:20px auto;
-  background:#f4ecd8;
-  background-image: 
-    radial-gradient(circle at 20% 80%, rgba(120,119,108,0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(120,119,108,0.15) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(120,119,108,0.1) 0%, transparent 50%);
-  border:8px solid #5a4a3a;
-  box-shadow:0 0 25px rgba(0,0,0,0.6);
-  position:relative;
-  overflow:hidden;
-  box-sizing:border-box;
-  padding:55px 60px 45px 60px;
-  color:#2c2416;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* -------- Action Buttons -------- */
-.action-buttons{
-  position:fixed;
-  top:20px;
-  right:20px;
-  z-index:1000;
-  display:flex;
-  gap:10px;
-}
-.action-btn{
-  background:#2c2416;
-  color:#f4ecd8;
-  padding:12px 20px;
-  border:2px solid #5a4a3a;
-  border-radius:3px;
-  font-family:"Playfair Display", serif;
-  font-size:0.95rem;
-  font-weight:600;
-  cursor:pointer;
-  transition:all 0.2s ease;
-  text-decoration:none;
-  display:inline-block;
-  box-shadow:0 3px 8px rgba(0,0,0,0.4);
-  text-transform:uppercase;
-  letter-spacing:1px;
-}
-.action-btn:hover{
-  background:#8b7355;
-  transform:translateY(-2px);
-  box-shadow:0 5px 12px rgba(0,0,0,0.5);
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: #f4ecd8;
+  color: #2c2416;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
 }
 
-/* -------- Masthead (Streamlined) -------- */
-header{
-  text-align:center;
-  border-top:6px double #2c2416;
-  border-bottom:3px solid #2c2416;
-  padding:12px 0 10px; /* Tightened padding */
-  margin-bottom:16px; /* Reduced margin */
-  background:linear-gradient(to bottom, #f4ecd8 0%, #ebe0cc 50%, #f4ecd8 100%);
-  position:relative;
-}
-/* Removed extra decorative line */
-header h1{
-  margin:0 0 4px 0; /* Minimal spacing */
-  font-family:"Cinzel", "Playfair Display", serif;
-  font-size:3rem;
-  font-weight:700;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  color:#1a1410;
-  text-shadow:2px 2px 0px rgba(0,0,0,0.1);
-  line-height:0.95; /* Tightened line height */
-}
-header p{
-  margin:0;
-  font-family:"Cinzel", serif;
-  font-weight:600;
-  font-size:0.72rem; /* Reduced for guaranteed single line */
-  text-transform:uppercase;
-  letter-spacing:0.8px;
-  color:#3a3020;
-  border-top:1px solid #5a4a3a;
-  padding:5px 0; /* Tightened padding */
-  display:inline-block;
-  width:90%;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  line-height:1; /* Single line enforcement */
+#page {
+  max-width: 100vw;
+  margin: 0 auto;
+  background: #f4ecd8;
+  padding: 20px 15px;
+  min-height: 100vh;
 }
 
-/* -------- Main Grid -------- */
-.content{
-  display:grid;
-  grid-template-columns:68% 29%;
-  column-gap:3%;
-  height:840px; /* Reduced from 850px */
-  margin-bottom:16px; /* Reduced margin */
+/* -------- Header -------- */
+header {
+  text-align: center;
+  border-bottom: 4px double #2c2416;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
 }
 
-/* -------- Main Story (Optimized Typography) -------- */
-.main-story{
-  padding-right:15px;
-  overflow:hidden;
-  box-sizing:border-box;
-  height:100%;
-  border-right:2px solid #5a4a3a;
-}
-.main-story h2{
-  text-align:center;
-  text-transform:uppercase;
-  font-family:"Playfair Display", serif;
-  font-size:1.75rem; /* Optimized size */
-  font-weight:900;
-  border-bottom:3px solid #2c2416;
-  padding-bottom:6px; /* Reduced padding */
-  margin-top:0;
-  margin-bottom:8px; /* Reduced margin */
-  line-height:1.05; /* Tightened line height */
-  letter-spacing:0.3px;
-  color:#1a1410;
-  height:72px; /* Optimized for 2 lines without "SACRAMENTO" */
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.main-story h3{
-  text-align:center;
-  font-size:0.9rem; /* Slightly reduced */
-  font-style:italic;
-  margin:0 0 10px 0; /* Reduced margin */
-  color:#3a3020;
-  line-height:1.15; /* Tightened */
-  font-weight:600;
-  height:20px; /* Optimized single line */
-  overflow:hidden;
-  white-space:nowrap;
-  text-overflow:ellipsis;
-}
-.main-photo{
-  width:100%;
-  height:310px;
-  border:4px solid #2c2416;
-  background:#d4c4a8 center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#5a4a3a;
-  font-style:italic;
-  margin:0 0 5px; /* Reduced margin */
-  font-size:0.85rem;
-  cursor:pointer;
-  transition:all 0.3s ease;
-  position:relative;
-  background-size:cover;
-  background-position:center;
-  filter:sepia(0.4) contrast(1.15) grayscale(0.3);
-  box-shadow:inset 0 0 20px rgba(0,0,0,0.15), 3px 3px 0px rgba(0,0,0,0.1);
-}
-.main-photo:hover{
-  filter:sepia(0.2) contrast(1.1) grayscale(0.1);
-  outline:3px solid #8b7355;
-  transform:translateY(-1px);
-}
-.main-photo.has-image{
-  color:transparent;
-}
-.photo-caption{
-  font-size:0.74rem; /* Reduced */
-  font-style:italic;
-  color:#3a3020;
-  margin-bottom:8px; /* Reduced margin */
-  border-bottom:2px dotted #5a4a3a;
-  padding-bottom:3px; /* Reduced padding */
-  text-align:center;
-  font-family:"Times New Roman", serif;
-  height:17px; /* Optimized single line */
-  overflow:hidden;
-  white-space:nowrap;
-  text-overflow:ellipsis;
-  line-height:1.1; /* Tightened */
-}
-.main-text{
-  height:415px; /* Increased to compensate for header space recovery */
-  text-align:justify;
-  font-size:0.96rem;
-  line-height:1.45; /* Tightened from 1.5 */
-  overflow:hidden;
-  box-sizing:border-box;
-  columns:2;
-  column-gap:22px;
-  column-rule:1px solid #d4c4a8;
-  color:#2c2416;
-}
-.main-text p{
-  margin:0 0 10px 0; /* Reduced margin */
-  text-indent:1.5em;
-}
-.main-text p:first-of-type{
-  text-indent:0;
-}
-.drop-cap{
-  float:left;
-  font-family:"Playfair Display", serif;
-  font-size:4rem;
-  line-height:0.72; /* Tightened */
-  padding-top:6px;
-  padding-right:10px;
-  font-weight:900;
-  color:#1a1410;
-}
-.continued{
-  font-style:italic;
-  color:#3a3020;
-  font-size:0.88rem;
-  text-align:right;
-  margin-top:8px;
-  font-weight:600;
-  border-top:1px solid #d4c4a8;
-  padding-top:5px;
-  line-height:1.2; /* Tightened */
+header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #1a1410;
+  margin-bottom: 6px;
+  line-height: 1.1;
 }
 
-/* -------- Right Column (Optimized Heights) -------- */
-aside{
-  height:100%;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  gap:10px; /* Reduced gap */
-}
-.highlight{
-  flex:0 0 460px; /* Slightly reduced */
-  overflow:hidden;
-  border:2px solid #5a4a3a;
-  padding:8px; /* Reduced padding */
-  background:#ebe0cc;
-  box-shadow:inset 0 0 15px rgba(0,0,0,0.08);
-}
-.highlight-img{
-  width:100%;
-  height:180px;
-  border:3px solid #2c2416;
-  background:#d4c4a8 center/cover no-repeat;
-  margin-bottom:6px; /* Reduced margin */
-  cursor:pointer;
-  transition:all 0.3s ease;
-  background-size:cover;
-  background-position:center;
-  filter:sepia(0.4) contrast(1.15) grayscale(0.3);
-  box-shadow:2px 2px 0px rgba(0,0,0,0.1);
-}
-.highlight-img:hover{
-  filter:sepia(0.2) contrast(1.1) grayscale(0.1);
-  outline:2px solid #8b7355;
-}
-.highlight strong{
-  display:block;
-  margin-bottom:5px; /* Reduced margin */
-  font-size:0.92rem; /* Slightly reduced */
-  line-height:1.15; /* Tightened */
-  font-family:"Playfair Display", serif;
-  font-weight:700;
-  color:#1a1410;
-  text-transform:uppercase;
-  letter-spacing:0.3px;
-  text-align:center;
-  height:40px; /* Optimized for 2 lines without "RETURNS" */
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.highlight span{
-  display:block;
-  text-align:justify;
-  line-height:1.4; /* Tightened from 1.45 */
-  font-size:0.87rem; /* Slightly reduced */
-  color:#2c2416;
-  text-indent:1em;
-}
-.inside-issue{
-  flex:1;
-  border:3px double #2c2416;
-  background:#ebe0cc;
-  padding:10px; /* Reduced padding */
-  overflow:hidden;
-  font-size:0.82rem; /* Slightly reduced */
-  line-height:1.5; /* Tightened from 1.55 */
-  box-sizing:border-box;
-  box-shadow:inset 0 0 15px rgba(0,0,0,0.08);
-}
-.inside-issue strong{
-  display:block;
-  text-align:center;
-  margin-bottom:8px; /* Reduced margin */
-  text-transform:uppercase;
-  border-bottom:3px double #2c2416;
-  padding-bottom:5px; /* Reduced padding */
-  font-size:0.88rem; /* Slightly reduced */
-  letter-spacing:2px;
-  font-family:"Cinzel", serif;
-  font-weight:700;
-  color:#1a1410;
-  line-height:1.1; /* Tightened */
+header p {
+  font-size: 0.7rem;
+  color: #5a4a3a;
+  font-style: italic;
+  line-height: 1.3;
 }
 
-/* -------- Lower Stories (Footer Clearance) -------- */
-.lower{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px; /* Reduced gap */
-  height:395px; /* Slightly increased to use recovered space */
-  margin-bottom:20px; /* Reduced margin */
-  border-top:3px solid #2c2416;
-  padding-top:10px; /* Reduced padding */
-}
-.story-block{
-  font-size:0.87rem; /* Slightly reduced */
-  line-height:1.4; /* Tightened from 1.45 */
-  overflow:hidden;
-  box-sizing:border-box;
-  background:#ebe0cc;
-  padding:8px; /* Reduced padding */
-  box-shadow:0 2px 5px rgba(0,0,0,0.15);
-  border-right:2px solid #d4c4a8;
-}
-.story-block:last-child{
-  border-right:none;
-}
-.story-img{
-  width:100%;
-  height:125px;
-  border:3px solid #2c2416;
-  background:#d4c4a8 center/cover no-repeat;
-  margin-bottom:5px; /* Reduced margin */
-  cursor:pointer;
-  transition:all 0.3s ease;
-  background-size:cover;
-  background-position:center;
-  filter:sepia(0.4) contrast(1.15) grayscale(0.3);
-  box-shadow:2px 2px 0px rgba(0,0,0,0.1);
-}
-.story-img:hover{
-  filter:sepia(0.2) contrast(1.1) grayscale(0.1);
-  outline:2px solid #8b7355;
-}
-.story-block strong{
-  display:block;
-  margin-bottom:5px; /* Reduced margin */
-  font-size:0.9rem; /* Slightly reduced */
-  line-height:1.15; /* Tightened from 1.2 */
-  text-transform:uppercase;
-  font-family:"Playfair Display", serif;
-  font-weight:700;
-  color:#1a1410;
-  letter-spacing:0.2px;
-  text-align:center;
-  height:42px; /* Optimized for 2 lines */
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.story-block p{
-  margin:0 0 4px 0; /* Reduced margin */
-  text-align:justify;
-  color:#2c2416;
-  text-indent:1em;
+/* -------- Hero Section -------- */
+.hero-section {
+  margin-bottom: 25px;
 }
 
-/* -------- Footer (Proper Clearance) -------- */
-footer{
-  text-align:center;
-  border-top:6px double #2c2416;
-  padding-top:16px; /* Slightly reduced */
-  font-size:0.84rem; /* Slightly reduced */
-  box-sizing:border-box;
-  position:absolute;
-  bottom:26px; /* Adjusted for proper clearance */
-  left:60px;
-  right:60px;
-  color:#2c2416;
-  line-height:1.3; /* Tightened */
-}
-footer a{
-  color:#1a1410;
-  text-decoration:none;
-  border-bottom:1px solid #2c2416;
-  font-weight:600;
-}
-footer a:hover{
-  color:#8b7355;
-  border-bottom-color:#8b7355;
-}
-footer em{
-  font-style:italic;
-  font-size:0.78rem; /* Slightly reduced */
-  display:block;
-  margin-top:8px; /* Reduced margin */
-  color:#3a3020;
-  line-height:1.2; /* Tightened */
+.hero-image {
+  width: 100%;
+  height: 200px;
+  background: #d4c4a8;
+  border: 3px solid #2c2416;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5a4a3a;
+  font-style: italic;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-bottom: 12px;
+  background-size: cover;
+  background-position: center;
+  filter: sepia(0.4) contrast(1.15) grayscale(0.3);
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-/* -------- Image Editor Modal -------- */
-.editor-modal{
-  display:none;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(44,36,22,0.95);
-  z-index:2000;
-  align-items:center;
-  justify-content:center;
+.hero-image:active {
+  transform: scale(0.98);
 }
-.editor-modal.active{
-  display:flex;
+
+.hero-image.has-image {
+  color: transparent;
 }
-.editor-content{
-  background:#f4ecd8;
-  padding:25px;
-  border-radius:8px;
-  border:3px solid #2c2416;
-  max-width:650px;
-  width:90%;
-  color:#2c2416;
+
+.hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #1a1410;
 }
-.editor-content h3{
-  margin-top:0;
-  text-align:center;
-  border-bottom:3px double #2c2416;
-  padding-bottom:12px;
-  font-family:"Playfair Display", serif;
-  color:#1a1410;
+
+.hero-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: justify;
+  text-indent: 1.5em;
+  color: #2c2416;
+  margin-bottom: 20px;
 }
-.editor-preview{
-  width:100%;
-  height:300px;
-  background:#5a4a3a;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  margin-bottom:15px;
-  border:2px solid #2c2416;
+
+.hero-text .drop-cap {
+  float: left;
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  line-height: 0.7;
+  padding-top: 6px;
+  padding-right: 8px;
+  font-weight: 900;
+  color: #1a1410;
 }
-.editor-controls{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:8px;
-  margin-bottom:15px;
+
+/* -------- Casting Section -------- */
+.casting-section {
+  border-top: 3px solid #2c2416;
+  padding-top: 20px;
+  margin-bottom: 25px;
 }
-.editor-controls button{
-  padding:10px 12px;
-  font-size:0.88rem;
-  border:2px solid #2c2416;
-  background:#ebe0cc;
-  color:#2c2416;
-  cursor:pointer;
-  border-radius:4px;
-  font-family:"Playfair Display", serif;
-  font-weight:600;
+
+.section-title {
+  font-family: "Cinzel", serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+  color: #1a1410;
+  border-bottom: 2px solid #5a4a3a;
+  padding-bottom: 8px;
 }
-.editor-controls button:hover{
-  background:#d4c4a8;
+
+.casting-info {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  color: #2c2416;
 }
-.editor-actions{
-  display:flex;
-  gap:10px;
-  justify-content:flex-end;
-  margin-top:15px;
-  border-top:2px solid #5a4a3a;
-  padding-top:15px;
+
+.casting-info strong {
+  font-weight: 700;
+  color: #1a1410;
+}
+
+/* -------- Portrait Images Grid -------- */
+.portraits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.portrait-image {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: #d4c4a8;
+  border: 3px solid #2c2416;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5a4a3a;
+  font-style: italic;
+  font-size: 0.7rem;
+  text-align: center;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  filter: sepia(0.4) contrast(1.15) grayscale(0.3);
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  padding: 5px;
+}
+
+.portrait-image:active {
+  transform: scale(0.98);
+}
+
+.portrait-image.has-image {
+  color: transparent;
+}
+
+.portraits-caption {
+  font-size: 0.75rem;
+  font-style: italic;
+  text-align: center;
+  color: #3a3020;
+  margin-top: 10px;
+  line-height: 1.3;
+}
+
+/* -------- Footer -------- */
+footer {
+  text-align: center;
+  border-top: 4px double #2c2416;
+  padding-top: 15px;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: #2c2416;
+}
+
+footer strong {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+footer a {
+  color: #1a1410;
+  text-decoration: none;
+  border-bottom: 1px solid #2c2416;
+}
+
+footer a:hover {
+  color: #8b7355;
+  border-bottom-color: #8b7355;
+}
+
+footer em {
+  display: block;
+  margin-top: 8px;
+  font-style: italic;
+  font-size: 0.7rem;
+  color: #3a3020;
+}
+
+/* -------- Action Button -------- */
+.action-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #5a4a3a;
+  color: #f4ecd8;
+  border: 2px solid #2c2416;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.action-btn:active {
+  transform: scale(0.95);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* -------- Hidden File Input -------- */
+input[type="file"] {
+  display: none;
 }
 </style>
 </head>
-
 <body>
 
-<!-- Action Buttons -->
-<div class="action-buttons">
-  <button class="action-btn" onclick="saveNewspaper()">💾 Save Archive</button>
-  <button class="action-btn" onclick="shareNewspaper()">📤 Share Heritage</button>
-</div>
-
 <div id="page">
+  <!-- Header -->
+  <header>
+    <h1>Fashion Week Sacramento</h1>
+    <p>Sacramento, California • Est. MMV<br>January 19, 2026 • Vol. XXI No. I<br>Heritage Casting Edition</p>
+  </header>
 
-<header>
-  <h1>Fashion Week Sacramento</h1>
-  <p>Sacramento, California • Est. MMV • January 19, 2026 • Vol. XXI No. I • Heritage Casting Edition</p>
-</header>
-
-<div class="content">
-
-  <!-- MAIN STORY -->
-  <section class="main-story">
-    <h2>Runway Stars Discovered at Morning Casting for Fashion Week</h2>
-    <h3>Morning casting session uncovers rising talent ready to redefine Sacramento's fashion narrative</h3>
-    
-    <!-- CLICKABLE MAIN PHOTO -->
-    <div class="main-photo" id="mainPhoto" onclick="uploadImage('mainPhoto', 720, 310)">
-      [Insert Live Casting Photo]
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="hero-image" id="heroImage" onclick="uploadImage('heroImage')">
+      [Tap to Add Photo]
     </div>
     
-    <div class="photo-caption">
-      <strong>SPOTLIGHT MOMENT:</strong> Models showcase their runway presence at the model castings for Fashion Week
-    </div>
-
-    <div class="main-text">
-      <p><span class="drop-cap">T</span>he energy was electric at Work of Heart Studio this morning as Fashion Week Sacramento 2026 launched its most competitive casting season yet. Before dawn broke over the capital, more than two hundred aspiring and professional models had gathered outside, ready to compete for coveted spots on the March 14th runway.</p>
-      
-      <p>This year's theme, <em>"Fashion Reimagined—Blending Nature, Technology, and Style,"</em> demands models who can embody both high-fashion sophistication and the authentic street culture that defines Sacramento's creative renaissance. Casting Assistant Nikisha Mitran noted the exceptional diversity in today's turnout, with participants ranging from seasoned professionals to first-time hopefuls discovering their runway potential.</p>
-      
-      <p>"What we're seeing today goes beyond traditional beauty standards," Mitran explained as models cycled through their walks. "We're looking for models who can not only walk but transform themselves into the designer's vision and help tell their story."</p>
-      
-      <p>The selection process combines technical evaluation with artistic vision. Each model poses for digital headshots and performs a basic walk followed by a more dramatic presentation with attitude for the designers in attendance.</p>
-      
-      <div class="continued"><em>Continued on Page 2</em></div>
-    </div>
-  </section>
-
-  <!-- RIGHT COLUMN -->
-  <aside>
-    <div class="highlight">
-      <div class="highlight-img" id="highlightImg" onclick="uploadImage('highlightImg', 350, 180)"></div>
-      <strong>Fashion Week March 14 at Railroad Museum</strong>
-      <span>
-        Sacramento's 21st annual Fashion Week transforms the historic California State Railroad Museum into a cutting-edge fashion showcase featuring over fifteen regional designers scheduled to take the stage, closing out the week on Saturday, March 14th. The event celebrates sustainable innovation, cultural storytelling, and the dynamic intersection of technology with traditional craftsmanship. Tickets go on sale February 1st.
-      </span>
-    </div>
-
-    <div class="inside-issue">
-      <strong>Inside This Issue</strong>
-      • <strong>Casting Day Gallery</strong> — Behind-the-scenes photos from today's selection process and standout moments. <em>Page 2</em><br><br>
-      • <strong>Designer Spotlight</strong> — Meet the innovators creating collections from upcycled materials and smart textiles. <em>Page 3</em><br><br>
-      • <strong>Model Training Preview</strong> — What selected participants can expect from February workshops. <em>Page 4</em><br><br>
-      • <strong>Venue Feature</strong> — How the Railroad Museum transforms into a modern runway. <em>Page 5</em><br><br>
-      • <strong>Community Impact</strong> — Economic effects of Fashion Week Sacramento on local businesses. <em>Page 6</em>
-    </div>
-  </aside>
-</div>
-
-<!-- LOWER STORIES -->
-<div class="lower">
-  <div class="story-block">
-    <div class="story-img" id="story1Img" onclick="uploadImage('story1Img', 330, 125)"></div>
-    <strong>Day Two Model Casting: January 24 at Atrium Gallery</strong>
-    <p>Fashion Week Sacramento 2026 holds its final casting session Saturday, January 24, at Old Sacramento's Atrium Gallery. The casting runs from 11 AM to 2 PM with walk-ins welcome. Models should wear fitted black attire with minimal accessories for digital portfolio shots and runway evaluation. You don't need to have an agent or prior experience. Selected participants receive spots on the March 14th runway and access to exclusive February training workshops.</p>
-    <div class="continued"><em>Details on Page 7</em></div>
-  </div>
-
-  <div class="story-block">
-    <div class="story-img" id="story2Img" onclick="uploadImage('story2Img', 330, 125)"></div>
-    <strong>Regalia in Bloom Presented as The Regalia Chamber</strong>
-    <p>Regalia in Bloom, photographer Trin De's ongoing exploration of adornment as authority, presents an installation at Fashion Week Sacramento 2026 through The Regalia Chamber, a site-specific exhibition which draws from the Regalia Archives, a curated collection stewarded by Work of Heart Studio. The installation showcases De's ability to create evocative scenes while presenting samples of the extraordinary wardrobe available for commissioned photography work.</p>
-    <div class="continued"><em>Feature story on Page 4</em></div>
-  </div>
-
-  <div class="story-block">
-    <div class="story-img" id="story3Img" onclick="uploadImage('story3Img', 330, 125)"></div>
-    <strong>Two Decades of Fashion in the Capital</strong>
-    <p>For two decades, DMR Productions has transformed Fashion Week Sacramento into a collaborative platform that unites the region's creative community. Producer Duane Ram's commitment to nurturing emerging talent extends through ongoing partnerships with academic fashion programs at Sacramento State and Delta College, providing students real-world runway experience alongside established professionals.</p>
-    <div class="continued"><em>Anniversary retrospective on Page 8</em></div>
-  </div>
-</div>
-
-<footer>
-  <strong>
-    DMR Productions • 
-    <a href="https://www.dmrproductions.online" target="_blank">www.dmrproductions.online</a> • 
-    <a href="https://www.instagram.com/dmrprod" target="_blank">@dmrprod</a> • 
-    <a href="https://www.instagram.com/sacfashionweek" target="_blank">@sacfashionweek</a>
-  </strong>
-  <em>A DMR Productions Publication • Fashion Week Sacramento 2026 • For Press Inquiries: press@dmrproductions.online</em>
-</footer>
-
-</div>
-
-<!-- Image Editor Modal -->
-<div class="editor-modal" id="editorModal">
-  <div class="editor-content">
-    <h3>Position Your Photo</h3>
-    <div class="editor-preview">
-      <canvas id="editorCanvas"></canvas>
-    </div>
-    <div class="editor-controls">
-      <button onclick="adjustEditor('zoomIn')">🔍 Zoom In</button>
-      <button onclick="adjustEditor('zoomOut')">🔍 Zoom Out</button>
-      <button onclick="adjustEditor('left')">← Move Left</button>
-      <button onclick="adjustEditor('right')">Move Right →</button>
-      <button onclick="adjustEditor('up')">↑ Move Up</button>
-      <button onclick="adjustEditor('down')">Move Down ↓</button>
-      <button onclick="resetEditor()">⟲ Reset</button>
-      <button onclick="fitToFrame()">⬚ Fit Frame</button>
-    </div>
-    <div class="editor-actions">
-      <button class="action-btn" style="background:#5a4a3a;" onclick="closeEditor()">Cancel</button>
-      <button class="action-btn" onclick="applyImage()">Apply Photo</button>
+    <h2 class="hero-title">Runway Stars Discovered at Morning Casting</h2>
+    
+    <div class="hero-text">
+      <span class="drop-cap">T</span>he energy was electric at Work of Heart Studio this morning as Fashion Week Sacramento 2026 launched its most competitive casting season yet. More than two hundred aspiring and professional models gathered to compete for coveted spots on the March 14th runway, showcasing the exceptional diversity and talent that defines Sacramento's creative renaissance.
     </div>
   </div>
+
+  <!-- Casting Section -->
+  <div class="casting-section">
+    <h3 class="section-title">Final Casting Call</h3>
+    
+    <div class="casting-info">
+      <strong>Saturday, January 24 • 11 AM - 2 PM</strong><br>
+      Atrium Gallery, Old Sacramento<br><br>
+      Walk-ins welcome! Wear fitted black attire. Selected participants receive spots on the March 14th runway and access to exclusive training workshops. No agent or prior experience required.
+    </div>
+
+    <!-- Portrait Images Grid -->
+    <div class="portraits-grid">
+      <div class="portrait-image" id="portrait1" onclick="uploadImage('portrait1')">
+        [Tap to Add]
+      </div>
+      <div class="portrait-image" id="portrait2" onclick="uploadImage('portrait2')">
+        [Tap to Add]
+      </div>
+      <div class="portrait-image" id="portrait3" onclick="uploadImage('portrait3')">
+        [Tap to Add]
+      </div>
+    </div>
+
+    <div class="portraits-caption">
+      <strong>SPOTLIGHT MOMENTS:</strong> Models showcase their runway presence at Fashion Week Sacramento 2026 casting sessions
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <strong>
+      DMR Productions<br>
+      <a href="https://www.dmrproductions.online" target="_blank">www.dmrproductions.online</a><br>
+      <a href="https://www.instagram.com/dmrprod" target="_blank">@dmrprod</a> • 
+      <a href="https://www.instagram.com/sacfashionweek" target="_blank">@sacfashionweek</a>
+    </strong>
+    <em>A DMR Productions Publication<br>Fashion Week Sacramento 2026<br>For Press: press@dmrproductions.online</em>
+  </footer>
 </div>
 
-<!-- Hidden file input -->
-<input type="file" id="fileInput" accept="image/*" style="display:none">
+<!-- Action Button -->
+<button class="action-btn" onclick="saveNewspaper()">💾 Save</button>
+
+<!-- Hidden File Input -->
+<input type="file" id="fileInput" accept="image/*" capture="environment">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
 <script>
-let currentTarget = null;
-let currentImageObj = null;
-let editorState = { scale: 1, x: 0, y: 0 };
-let canvas, ctx;
+let currentTargetId = null;
 
-function uploadImage(elementId, width, height) {
-  currentTarget = {id: elementId, width: width, height: height};
+function uploadImage(elementId) {
+  currentTargetId = elementId;
   document.getElementById('fileInput').click();
 }
 
 document.getElementById('fileInput').addEventListener('change', function(e) {
-  if (e.target.files && e.target.files[0] && currentTarget) {
+  if (e.target.files && e.target.files[0] && currentTargetId) {
     const reader = new FileReader();
     reader.onload = function(event) {
-      const img = new Image();
-      img.onload = function() {
-        currentImageObj = img;
-        openEditor();
-      };
-      img.src = event.target.result;
+      const element = document.getElementById(currentTargetId);
+      element.style.backgroundImage = `url(${event.target.result})`;
+      element.classList.add('has-image');
+      element.textContent = '';
     };
     reader.readAsDataURL(e.target.files[0]);
+    this.value = '';
   }
 });
 
-function openEditor() {
-  const modal = document.getElementById('editorModal');
-  canvas = document.getElementById('editorCanvas');
-  ctx = canvas.getContext('2d');
-  
-  canvas.width = currentTarget.width;
-  canvas.height = currentTarget.height;
-  
-  const scaleX = canvas.width / currentImageObj.width;
-  const scaleY = canvas.height / currentImageObj.height;
-  const initialScale = Math.max(scaleX, scaleY);
-  
-  editorState = { 
-    scale: initialScale, 
-    x: (canvas.width - currentImageObj.width * initialScale) / 2,
-    y: (canvas.height - currentImageObj.height * initialScale) / 2
-  };
-
-  drawEditor();
-  modal.classList.add('active');
-}
-
-function drawEditor() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.filter = 'sepia(0.4) contrast(1.15) grayscale(0.3)';
-  ctx.drawImage(
-    currentImageObj, 
-    editorState.x, 
-    editorState.y, 
-    currentImageObj.width * editorState.scale, 
-    currentImageObj.height * editorState.scale
-  );
-  ctx.filter = 'none';
-}
-
-function adjustEditor(action) {
-  const moveStep = 10;
-  const zoomStep = 0.05;
-  
-  switch(action) {
-    case 'zoomIn': editorState.scale += zoomStep; break;
-    case 'zoomOut': editorState.scale = Math.max(0.1, editorState.scale - zoomStep); break;
-    case 'left': editorState.x -= moveStep; break;
-    case 'right': editorState.x += moveStep; break;
-    case 'up': editorState.y -= moveStep; break;
-    case 'down': editorState.y += moveStep; break;
-  }
-  drawEditor();
-}
-
-function resetEditor() {
-  const scaleX = canvas.width / currentImageObj.width;
-  const scaleY = canvas.height / currentImageObj.height;
-  const initialScale = Math.max(scaleX, scaleY);
-  
-  editorState = { 
-    scale: initialScale, 
-    x: (canvas.width - currentImageObj.width * initialScale) / 2,
-    y: (canvas.height - currentImageObj.height * initialScale) / 2
-  };
-  drawEditor();
-}
-
-function fitToFrame() {
-  const scaleX = canvas.width / currentImageObj.width;
-  const scaleY = canvas.height / currentImageObj.height;
-  const fitScale = Math.min(scaleX, scaleY);
-  
-  editorState = { 
-    scale: fitScale, 
-    x: (canvas.width - currentImageObj.width * fitScale) / 2,
-    y: (canvas.height - currentImageObj.height * fitScale) / 2
-  };
-  drawEditor();
-}
-
-function applyImage() {
-  const element = document.getElementById(currentTarget.id);
-  element.style.backgroundImage = `url(${canvas.toDataURL('image/jpeg', 0.95)})`;
-  element.classList.add('has-image');
-  element.textContent = '';
-  closeEditor();
-}
-
-function closeEditor() {
-  document.getElementById('editorModal').classList.remove('active');
-  document.getElementById('fileInput').value = '';
-  canvas = null;
-  ctx = null;
-  currentImageObj = null;
-}
-
 async function saveNewspaper() {
-  const buttons = document.querySelector('.action-buttons');
-  buttons.style.display = 'none';
-  
-  try {
-    const page = document.getElementById('page');
-    const canvas = await html2canvas(page, {
-      scale: 2,
-      useCORS: true,
-      logging: false,
-      backgroundColor: '#f4ecd8'
-    });
-    
-    const link = document.createElement('a');
-    link.download = `Fashion-Week-Sacramento-Heritage-${new Date().getTime()}.png`;
-    link.href = canvas.toDataURL('image/png', 1.0);
-    link.click();
-  } catch (error) {
-    alert('Save failed. Please try taking a screenshot instead.');
-  } finally {
-    buttons.style.display = 'flex';
-  }
-}
-
-async function shareNewspaper() {
-  const buttons = document.querySelector('.action-buttons');
-  buttons.style.display = 'none';
+  const btn = document.querySelector('.action-btn');
+  btn.style.display = 'none';
   
   try {
     const page = document.getElementById('page');
@@ -777,37 +369,36 @@ async function shareNewspaper() {
     });
     
     canvas.toBlob(async (blob) => {
-      const file = new File([blob], 'fashion-week-sacramento-heritage.png', { type: 'image/png' });
+      const file = new File([blob], `fashion-week-heritage-${Date.now()}.png`, { type: 'image/png' });
       
       if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
         try {
           await navigator.share({
             files: [file],
-            title: 'Fashion Week Sacramento 2026 - Heritage Edition',
+            title: 'Fashion Week Sacramento 2026',
             text: 'Featured in Fashion Week Sacramento Heritage Edition!'
           });
         } catch (err) {
           if (err.name !== 'AbortError') {
-            fallbackShare(canvas);
+            downloadImage(canvas);
           }
         }
       } else {
-        fallbackShare(canvas);
+        downloadImage(canvas);
       }
-    }, 'image/png', 1.0);
+    }, 'image/png');
   } catch (error) {
-    alert('Share failed. Please use Save Image instead.');
+    alert('Save failed. Please try taking a screenshot instead.');
   } finally {
-    buttons.style.display = 'flex';
+    btn.style.display = 'block';
   }
 }
 
-function fallbackShare(canvas) {
+function downloadImage(canvas) {
   const link = document.createElement('a');
-  link.download = `Fashion-Week-Sacramento-Heritage-Share-${new Date().getTime()}.png`;
-  link.href = canvas.toDataURL('image/png', 1.0);
+  link.download = `fashion-week-heritage-${Date.now()}.png`;
+  link.href = canvas.toDataURL('image/png');
   link.click();
-  alert('Image saved! You can now share it from your device.');
 }
 </script>
 
