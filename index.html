@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <meta name="viewport"
       content="width=device-width, height=device-height,
-               initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+               initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <title>FASHION WEEK SACRAMENTO | Final Casting Day Two @ The Atrium</title>
+
+<!-- html2canvas -->
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
 <style>
 html,body{
   margin:0;padding:0;
-  height:100%;width:100%;
-  font-family:"Times New Roman",serif;
+  width:100%;height:100%;
   background:#dcd8cf;
+  font-family:"Times New Roman",serif;
 }
 
-/* APP FRAME */
 #app{
-  display:flex;flex-direction:column;align-items:center;
   width:100vw;height:100vh;
-  background:#fefdf9;
-  overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;
+  background:#fffefa;
+  overflow:hidden;position:relative;
 }
 
 /* HEADER */
@@ -30,27 +32,32 @@ header{
   border-top:4px double #000;
   border-bottom:4px double #000;
   background:#fff;
-  padding:1.5vh 0 1vh;
+  padding:1.3vh 0;
 }
-header h1{margin:0;font-size:5vw;font-weight:900;}
-header p{margin:0.4vh 0 0;font-size:3vw;font-style:italic;}
+header h1{
+  margin:0;font-size:5vw;font-weight:900;
+  white-space:normal;word-break:keep-all;overflow-wrap:break-word;
+}
+header p{margin:0.3vh 0 0;font-size:3vw;font-style:italic;}
 
-/* MAIN IMAGE */
-.main-img{
-  width:95%;
-  aspect-ratio:16/9;
-  background:#e0e0e0 center/cover no-repeat;
-  border:0.25vh solid #333;
-  border-radius:0.8vw;
-  margin:1.2vh auto;
-  display:flex;align-items:center;justify-content:center;
-  font-style:italic;color:#666;
+/* MAIN IMAGE (16:9) */
+.frame{
+  width:95%;aspect-ratio:16/9;
+  margin:1vh auto;
+  border:0.3vh solid #333;border-radius:0.8vw;
+  background:#eee center/cover no-repeat;
   overflow:hidden;position:relative;
+  display:flex;align-items:center;justify-content:center;
+  color:#666;font-style:italic;
 }
-.main-img input[type=file]{position:absolute;bottom:2vh;left:2vw;opacity:0;width:50px;height:40px;}
-.slider{position:absolute;bottom:2vh;right:2vw;width:35%;}
+.frame canvas{
+  width:100%;height:100%;
+  touch-action:none;
+}
+.frame input[type=file]{position:absolute;bottom:2vh;left:2vw;opacity:0;width:40px;height:40px;}
+.frame input[type=range]{position:absolute;bottom:2vh;right:2vw;width:30%;}
 
-/* HEADLINE */
+/* TITLE */
 h2{
   width:88%;
   text-align:center;
@@ -60,116 +67,109 @@ h2{
   border-bottom:1px solid #444;
   margin:0 auto;
   padding-bottom:0.4vh;
-  word-wrap:break-word;
+  word-break:keep-all;
   overflow-wrap:break-word;
 }
 
-/* STORY BODY */
+/* STORY */
 .story{
   width:88%;
-  font-size:3.1vw;
-  line-height:1.5;
+  font-size:3.2vw;
+  line-height:1.55;
   text-align:justify;
   margin-top:0.6vh;
   flex:1;
   overflow:auto;
   word-wrap:break-word;
   hyphens:auto;
+  padding-right:1vw;
 }
 
-/* BOTTOM 3 IMAGES — 3×4 portrait ratio */
+/* 3 PORTRAIT PHOTOS 3x4 */
 .photo-row{
-  display:flex;
-  justify-content:space-between;
-  width:92%;
-  margin:1.2vh 0;
-  gap:2%;
+  display:flex;justify-content:space-between;
+  width:92%;margin:1vh 0;gap:2%;
 }
-.small-photo{
-  flex:1;
-  aspect-ratio:3/4;
-  background:#e6e6e6 center/cover no-repeat;
-  border:0.25vh solid #333;
-  border-radius:0.8vw;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#555;
-  font-size:3vw;
-  font-style:italic;
-  position:relative;
-  overflow:hidden;
+.pframe{
+  flex:1;aspect-ratio:3/4;
+  border:0.25vh solid #333;border-radius:0.8vw;
+  background:#e6e6e6 center/cover no-repeat;color:#555;
+  font-size:2.8vw;font-style:italic;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
 }
-.small-photo input[type=file]{position:absolute;bottom:1vh;left:1vh;opacity:0;width:30px;height:30px;}
-.zoom-range{
-  position:absolute;
-  bottom:1vh;right:1vh;width:50px;
-}
+.pframe canvas{width:100%;height:100%;touch-action:none;}
+.pframe input[type=file]{position:absolute;bottom:1vh;left:1vh;opacity:0;width:30px;height:30px;}
+.pframe input[type=range]{position:absolute;bottom:1vh;right:1vh;width:40%;}
 
 /* FOOTER */
 footer{
   width:100%;
   text-align:center;
   border-top:3px double #000;
-  background:#fff;
   font-size:2.8vw;
   padding:0.8vh 0 1vh;
+  background:#fff;
 }
-footer a{color:#000;text-decoration:none;border-bottom:0.15vh solid #000;}
+footer a{
+  color:#000;text-decoration:none;border-bottom:0.1vh solid #000;
+}
 footer a:hover{color:#b58900;border-bottom-color:#b58900;}
 footer em{display:block;font-size:2.5vw;font-style:italic;margin-top:0.3vh;}
+
+/* SAVE BUTTON */
+#saveBtn{
+  position:absolute;
+  bottom:4vh;right:4vw;
+  width:13vw;height:13vw;
+  border:none;border-radius:50%;
+  background:#000;color:#fff;font-size:6vw;
+  box-shadow:0 0 8px rgba(0,0,0,0.3);
+}
 </style>
 </head>
 
 <body>
 <div id="app">
-
   <header>
     <h1>FASHION WEEK SACRAMENTO</h1>
     <p>FINAL CASTING DAY TWO • JAN 23 2026</p>
   </header>
 
-  <!-- MAIN IMAGE -->
-  <div class="main-img" id="mainImg" onclick="document.getElementById('mainFile').click()">
-    Tap to Insert Main Photo
-    <input type="file" id="mainFile" accept="image/*;capture=camera"
-           onchange="setImage(event,'mainImg','mainZoom')">
-    <input type="range" min="1" max="2" step="0.01" value="1" id="mainZoom" class="slider"
-           onchange="zoomImage('mainImg','mainZoom')">
+  <!-- main canvas for primary photo -->
+  <div class="frame" id="mainFrame">
+    <canvas id="mainCanvas"></canvas>
+    Tap to Insert Main Photo
+    <input type="file" accept="image/*;capture=camera"
+      onchange="loadToCanvas(event,'mainCanvas')" />
+    <input type="range" min="1" max="2" step="0.01" value="1"
+      id="zoomMain" onchange="zoomCanvas('mainCanvas','zoomMain')">
   </div>
 
-  <!-- HEADLINE -->
   <h2>FINAL CASTING FOR MODELS HELD AT THE ATRIUM</h2>
 
-  <!-- STORY -->
-  <div class="story">
-    Day Two of Fashion Week Sacramento’s model castings was the final round for 2026, held at The Atrium — a 501(c)(3) nonprofit creative center for sustainability and innovation. As an incubator for “business for good,” The Atrium brings together artists, entrepreneurs, and educators to build a kind and sustainable future. 
-    <br><br>
-    The venue houses classes, events, and art studios dedicated to collaboration and social impact. The final casting featured models from throughout California showcasing confidence and purpose as DMR Productions prepared for the upcoming runway season.
+  <div class="story" id="storyText">
+    Day Two of Fashion Week Sacramento’s model castings was the last round for 2026, held at The Atrium — a 501(c)(3) nonprofit creative center for sustainability and innovation. As an incubator for “business for good,” The Atrium brings together artists and entrepreneurs to collaborate toward an omni‑considerate future. Models arrived ready to make their final walk before Fashion Week Sacramento unfolds this March.
   </div>
 
-  <!-- 3 PORTRAIT BOTTOM IMAGES -->
+  <!-- 3 portrait images -->
   <div class="photo-row">
-    <div class="small-photo" id="p1" onclick="document.getElementById('f1').click()">
-      +
-      <input type="file" id="f1" accept="image/*;capture=camera"
-             onchange="setImage(event,'p1','z1')">
+    <div class="pframe" id="p1">
+      <canvas id="c1"></canvas>
+      <input type="file" accept="image/*;capture=camera" onchange="loadToCanvas(event,'c1')">
       <input type="range" min="1" max="2" step="0.01" value="1" id="z1"
-             class="zoom-range" onchange="zoomImage('p1','z1')">
+             onchange="zoomCanvas('c1','z1')">
     </div>
-    <div class="small-photo" id="p2" onclick="document.getElementById('f2').click()">
-      +
-      <input type="file" id="f2" accept="image/*;capture=camera"
-             onchange="setImage(event,'p2','z2')">
+    <div class="pframe" id="p2">
+      <canvas id="c2"></canvas>
+      <input type="file" accept="image/*;capture=camera" onchange="loadToCanvas(event,'c2')">
       <input type="range" min="1" max="2" step="0.01" value="1" id="z2"
-             class="zoom-range" onchange="zoomImage('p2','z2')">
+             onchange="zoomCanvas('c2','z2')">
     </div>
-    <div class="small-photo" id="p3" onclick="document.getElementById('f3').click()">
-      +
-      <input type="file" id="f3" accept="image/*;capture=camera"
-             onchange="setImage(event,'p3','z3')">
+    <div class="pframe" id="p3">
+      <canvas id="c3"></canvas>
+      <input type="file" accept="image/*;capture=camera" onchange="loadToCanvas(event,'c3')">
       <input type="range" min="1" max="2" step="0.01" value="1" id="z3"
-             class="zoom-range" onchange="zoomImage('p3','z3')">
+             onchange="zoomCanvas('c3','z3')">
     </div>
   </div>
 
@@ -181,31 +181,76 @@ footer em{display:block;font-size:2.5vw;font-style:italic;margin-top:0.3vh;}
     </strong>
     <em>Fashion Week Sacramento 2026 Final Casting Edition</em>
   </footer>
+
+  <!-- Save/Share Button -->
+  <button id="saveBtn" title="Save Story as Image">⬇️</button>
 </div>
 
 <script>
-function setImage(e,boxId,zoomId){
-  const div=document.getElementById(boxId);
+/* ===== Image Loading and Zoom within Canvas ===== */
+function loadToCanvas(e,canvasId){
   const file=e.target.files[0];
   if(!file)return;
   const reader=new FileReader();
   reader.onload=x=>{
-    div.style.backgroundImage=`url(${x.target.result})`;
-    div.style.backgroundSize='cover';
-    div.style.backgroundRepeat='no-repeat';
-    div.style.backgroundPosition='center';
-    div.textContent="";
-    document.getElementById(zoomId).value=1; // reset zoom
-    div.style.transform='scale(1)';
+    const img=new Image();
+    img.onload=function(){
+      const cvs=document.getElementById(canvasId);
+      const ctx=cvs.getContext('2d');
+      cvs.width=cvs.offsetWidth*2; // higher res
+      cvs.height=cvs.offsetHeight*2;
+      drawCenteredImage(ctx,img,cvs);
+      cvs.dataset.src=x.target.result; // store for zoom
+      cvs.dataset.scale=1;
+    };
+    img.src=x.target.result;
   };
   reader.readAsDataURL(file);
 }
 
-function zoomImage(boxId,zoomId){
-  const div=document.getElementById(boxId);
-  const zoom=document.getElementById(zoomId).value;
-  div.style.transform=`scale(${zoom})`;
-  div.style.transformOrigin='center center';
+/* Draw image centered & scaled */
+function drawCenteredImage(ctx,img,cvs,scale=1){
+  ctx.clearRect(0,0,cvs.width,cvs.height);
+  const iw=img.width*scale, ih=img.height*scale;
+  const cw=cvs.width, ch=cvs.height;
+  const ratio=Math.max(cw/iw,ch/ih);
+  const w=iw*ratio, h=ih*ratio;
+  ctx.drawImage(img,(cw-w)/2,(ch-h)/2,w,h);
+}
+
+/* Zooming using slider */
+function zoomCanvas(canvasId,zoomId){
+  const cvs=document.getElementById(canvasId);
+  const ctx=cvs.getContext('2d');
+  const scale=parseFloat(document.getElementById(zoomId).value);
+  const src=cvs.dataset.src;
+  if(!src)return;
+  const img=new Image();
+  img.onload=()=>drawCenteredImage(ctx,img,cvs,scale);
+  img.src=src;
+  cvs.dataset.scale=scale;
+}
+
+/* ======= Save / Share as JPG ======= */
+document.getElementById("saveBtn").addEventListener("click",()=>{
+  const app=document.getElementById("app");
+  html2canvas(app,{scale:2,useCORS:true}).then(canvas=>{
+    canvas.toBlob(blob=>{
+      const file=new File([blob],"FashionWeekSacramento_FinalCasting.jpg",{type:"image/jpeg"});
+      if(navigator.share){
+        navigator.share({title:"Fashion Week Sacramento Final Casting",
+                         text:"Fashion Week Sacramento 2026 Final Casting Day Two @ The Atrium",
+                         files:[file]}).catch(()=>downloadBlob(blob));
+      }else downloadBlob(blob);
+    });
+  });
+});
+function downloadBlob(blob){
+  const link=document.createElement("a");
+  link.href=URL.createObjectURL(blob);
+  link.download="FashionWeekSacramento_FinalCasting.jpg";
+  link.click();
+  URL.revokeObjectURL(link.href);
 }
 </script>
 </body>
