@@ -2,91 +2,122 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0,
+               maximum-scale=1.0, user-scalable=no" />
 <title>Fashion Week Sacramento | Story Front Page</title>
 <style>
-body{
-  margin:0;
-  background:#dcd8cf;
-  font-family:"Times New Roman",serif;
+:root {
+  --frame-w: 1080px;
+  --frame-h: 1920px;
+}
+html,body{margin:0;padding:0;height:100%;background:#dcd8cf;
+  font-family:"Times New Roman",serif;}
+.container{
+  width:100%;
+  height:100%;
+  max-width:var(--frame-w);
+  max-height:var(--frame-h);
+  margin:auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
 }
 #storyPage{
-  width:1080px;
-  height:1920px;
-  margin:0 auto;
+  width:100%;
+  height:100%;
+  background:#fdfbf7;
+  border:8px solid #ccc;
+  box-shadow:0 0 10px rgba(0,0,0,0.25);
   position:relative;
   overflow:hidden;
-  background:#fdfbf7;
-  border:10px solid #ccc;
-  box-shadow:0 0 12px rgba(0,0,0,0.25);
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
   box-sizing:border-box;
 }
 
-/* ---- Masthead ---- */
+/* --- Header --- */
 header{
-  position:absolute;top:40px;left:40px;right:40px;
   text-align:center;
-  border-top:4px double #000;border-bottom:4px double #000;
-  padding:15px 0;
+  border-top:4px double #000;
+  border-bottom:4px double #000;
+  padding:15px 0 10px;
 }
-header h1{margin:0;font-size:2.6rem;font-weight:900;}
-header p{margin:3px 0 0;font-style:italic;font-size:1rem;}
+header h1{margin:0;font-size:2.2rem;font-weight:900;}
+header p{margin:4px 0 0;font-style:italic;font-size:1rem;}
 
-/* ---- Main Image & Title ---- */
-.mainFeature{
-  position:absolute;
-  top:150px;left:40px;right:40px;
-  height:520px;
+/* --- Image Feature --- */
+.imageBox{
+  flex:0 0 30%;            /* occupies ~30% vertically */
+  margin:20px;
   border:1px solid #444;
   background:#e0e0e0 center/cover no-repeat;
-  display:flex;align-items:center;justify-content:center;
-  color:#666;font-style:italic;
-}
-.mainFeature input[type=file]{position:absolute;bottom:10px;left:10px;}
-
-.mainHeadline{
-  position:absolute;top:680px;left:60px;right:60px;
-  text-align:center;
-  font-size:2rem;
-  font-weight:bold;
-  border-bottom:1px solid #555;
-  padding-bottom:6px;
-}
-
-/* ---- Story Text ---- */
-.mainText{
-  position:absolute;
-  top:740px;left:60px;right:60px;
-  height:400px;
-  text-align:justify;
-  font-size:1.05rem;
-  line-height:1.6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#666;
+  font-style:italic;
+  position:relative;
   overflow:hidden;
 }
-
-/* ---- Highlight Box ---- */
-.highlight{
+.imageBox input[type=file]{
   position:absolute;
-  top:1160px;left:60px;right:60px;
-  height:180px;
-  background:#f3f1ec;
+  bottom:10px;left:10px;
+  opacity:0;
+  width:40px;height:40px;
+}
+
+/* --- Headline --- */
+.headline{
+  text-align:center;
+  font-size:1.8rem;
+  font-weight:bold;
+  border-bottom:1px solid #555;
+  padding:5px 0;
+  margin:0 40px;
+}
+
+/* --- Main Text --- */
+.mainText{
+  flex:0 0 20%;
+  margin:10px 40px 0 40px;
+  font-size:1.05rem;
+  line-height:1.6;
+  text-align:justify;
+  overflow:auto;
+  text-wrap:balance;
+  word-wrap:break-word;
+  hyphens:auto;
+}
+
+/* --- Highlight --- */
+.highlight{
+  flex:0 0 15%;
+  margin:10px 40px;
+  background:#f4f2ed;
   border:1px solid #aaa;
   padding:10px 14px;
-  box-sizing:border-box;
+  overflow:auto;
 }
-.highlight strong{display:block;margin-bottom:6px;}
-.highlight p{margin:0;font-size:0.95rem;line-height:1.5;}
+.highlight strong{
+  display:block;margin-bottom:6px;font-size:1rem;
+}
+.highlight p{
+  margin:0;font-size:0.95rem;line-height:1.5;
+  overflow:auto;word-wrap:break-word;
+}
 
-/* ---- Inside Issue ---- */
+/* --- Inside the Issue --- */
 .insideIssue{
-  position:absolute;
-  top:1360px;left:60px;right:60px;
-  height:150px;
-  background:#faf8f3;
+  flex:0 0 13%;
+  margin:0 40px 0 40px;
   border:1px solid #bbb;
+  background:#faf8f3;
   padding:8px 12px;
-  box-sizing:border-box;
   font-size:0.95rem;line-height:1.45;
+  overflow:auto;
 }
 .insideIssue strong{
   display:block;text-align:center;margin-bottom:4px;
@@ -95,29 +126,28 @@ header p{margin:3px 0 0;font-style:italic;font-size:1rem;}
   padding-bottom:3px;
 }
 
-/* ---- Ad Banner ---- */
+/* --- Ad Banner --- */
 .adBanner{
-  position:absolute;
-  bottom:100px;
-  left:60px;right:60px;
-  height:80px;
+  flex:0 0 6%;
+  margin:12px 40px;
   border:1px solid #999;
   background:url('https://placehold.co/950x80?text=ADVERTISEMENT+-+DMR+Productions+Sponsor+Strip')
-    center/cover no-repeat;
+             center/cover no-repeat;
   text-align:center;
-  line-height:80px;
+  line-height:70px;
   font-style:italic;
-  color:#333;font-size:1rem;
+  color:#333;
+  font-size:1rem;
 }
 
-/* ---- Footer ---- */
+/* --- Footer --- */
 footer{
-  position:absolute;
-  bottom:20px;left:60px;right:60px;
+  flex:0 0 5%;
   border-top:3px double #000;
   text-align:center;
-  padding-top:8px;
-  font-size:0.95rem;
+  padding-top:6px;
+  margin:0 40px 15px 40px;
+  font-size:0.9rem;
 }
 footer a{
   color:#000;
@@ -137,51 +167,54 @@ footer em{
 </head>
 
 <body>
+<div class="container">
 <div id="storyPage">
 
   <header>
     <h1>FASHION WEEK SACRAMENTO</h1>
-    <p>Issue Date January 23, 2026 • Volume 21 No 2</p>
+    <p>Issue Date January 23 2026 • Volume 21 No 2</p>
   </header>
 
-  <!-- Main Photo with Camera Upload -->
-  <div class="mainFeature" id="mainFeature">
-    Tap to Insert Main Photo
-    <input type="file" accept="image/*" capture="environment"
-      onchange="previewImage(event,'mainFeature')" />
+  <!-- Camera Image Box -->
+  <div class="imageBox" id="mainBox" onclick="document.getElementById('mainFile').click()">
+    Tap to Insert Photo
+    <input type="file" id="mainFile" accept="image/*;capture=camera"
+           onchange="previewImage(event,'mainBox')" />
   </div>
 
   <!-- Headline -->
-  <div class="mainHeadline">
+  <div class="headline">
     RUNWAY MODELS BRING ENERGY TO FIRST CASTING
   </div>
 
-  <!-- Main Story Text -->
+  <!-- Main Story -->
   <div class="mainText">
-    Excitement and anticipation filled the Work of Heart Studio as DMR Productions hosted its first casting for Fashion Week Sacramento 2026. Hundreds of aspiring models arrived early, eager to walk and introduce themselves to design scouts. 
+    The energy at Work of Heart Studio was palpable as hundreds of aspiring models arrived for Fashion Week Sacramento 2026 castings. Producers praised the mix of new faces and veterans as the city welcomes its largest season ever. 
     <br><br>
-    "This season is about momentum," said director Melissa Kay. "We want to showcase fresh faces and bold design at a scale Sacramento has never seen before." Finalists will attend intensive rehearsal camps before the March 14 premiere at the California State Railroad Museum.
+    “It’s about momentum and representation,” said casting director Melissa Kay. Finalists begin rehearsals next month in preparation for the March 14 premiere at the California State Railroad Museum.
   </div>
 
-  <!-- Highlight Box -->
+  <!-- Highlight -->
   <div class="highlight">
     <strong>FASHION WEEK RETURNS MARCH 14 AT THE RAILROAD MUSEUM</strong>
     <p>
-      Celebrating its 21st year, Fashion Week Sacramento will feature over 30 regional designers and sustainable collections on a runway that winds through vintage train cars. Tickets go on sale this February with proceeds supporting local art programs.
+      Sacramento’s signature fashion festival returns with over 30 regional designers presenting eco‑forward collections inside the historic Railroad Museum. More than two thousand attendees are expected to take part in the weekend events. Tickets go on sale this February.
     </p>
   </div>
 
   <!-- Inside the Issue -->
   <div class="insideIssue">
     <strong>INSIDE THE ISSUE</strong>
-    • Meet the designers transforming Sacramento’s style scene – Pg 2 <br>
+    • Meet the Designers Transforming Sacramento’s Style Scene – Pg 2 <br>
     • Model Training Intensive Highlights – Pg 3 <br>
-    • Sustainability Forum Voices with DMR Producers – Pg 5 <br>
+    • Sustainability Forum with DMR Producers – Pg 5 <br>
     • Behind the Scenes Production Gallery – Pg 6
   </div>
 
   <!-- Ad Banner -->
-  <div class="adBanner">ADVERTISEMENT – Replace with Sponsor Image</div>
+  <div class="adBanner">
+    ADVERTISEMENT – REPLACE WITH SPONSOR IMAGE
+  </div>
 
   <!-- Footer -->
   <footer>
@@ -195,12 +228,13 @@ footer em{
   </footer>
 
 </div>
+</div>
 
 <script>
-function previewImage(event,id){
-  const div = document.getElementById(id);
+function previewImage(event,boxId){
+  const div = document.getElementById(boxId);
   const file = event.target.files[0];
-  if(!file)return;
+  if(!file) return;
   const reader = new FileReader();
   reader.onload = e=>{
     div.style.backgroundImage = `url(${e.target.result})`;
