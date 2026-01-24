@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8">
 <meta name="viewport"
       content="width=device-width, height=device-height,
-               initial-scale=1.0, maximum-scale=1.0,
-               user-scalable=no" />
+               initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>FASHION WEEK SACRAMENTO | Final Casting Day Two @ The Atrium</title>
+
 <style>
 html,body{
   margin:0;padding:0;
@@ -15,128 +15,109 @@ html,body{
   background:#dcd8cf;
 }
 
-/* Main App Container */
+/* APP FRAME */
 #app{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+  display:flex;flex-direction:column;align-items:center;
   width:100vw;height:100vh;
   background:#fefdf9;
   overflow:hidden;
 }
 
-/* Header */
+/* HEADER */
 header{
   width:100%;
   text-align:center;
   border-top:4px double #000;
   border-bottom:4px double #000;
   background:#fff;
-  padding:1.2vh 0;
+  padding:1.5vh 0 1vh;
 }
-header h1{
-  margin:0;
-  font-size:5vw;
-  font-weight:900;
-}
-header p{
-  margin:0.4vh 0 0;
-  font-size:3vw;
-  font-style:italic;
-}
+header h1{margin:0;font-size:5vw;font-weight:900;}
+header p{margin:0.4vh 0 0;font-size:3vw;font-style:italic;}
 
-/* Main Image */
+/* MAIN IMAGE */
 .main-img{
-  width:94%;
+  width:95%;
   aspect-ratio:16/9;
   background:#e0e0e0 center/cover no-repeat;
-  margin:1.5vh auto;
-  border-radius:1vw;
-  border:0.3vh solid #333;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#555;
-  font-style:italic;
-  overflow:hidden;
+  border:0.25vh solid #333;
+  border-radius:0.8vw;
+  margin:1.2vh auto;
+  display:flex;align-items:center;justify-content:center;
+  font-style:italic;color:#666;
+  overflow:hidden;position:relative;
 }
-.main-img input[type=file]{
-  position:absolute;
-  bottom:2vh;left:2vw;
-  opacity:0;
-  width:40px;height:40px;
-}
+.main-img input[type=file]{position:absolute;bottom:2vh;left:2vw;opacity:0;width:50px;height:40px;}
+.slider{position:absolute;bottom:2vh;right:2vw;width:35%;}
 
-/* Headline */
+/* HEADLINE */
 h2{
   width:88%;
-  margin:0;
   text-align:center;
-  font-size:4.7vw;
+  font-size:4.3vw;
+  line-height:1.25;
   font-weight:bold;
-  line-height:1.2;
   border-bottom:1px solid #444;
-  padding-bottom:0.6vh;
+  margin:0 auto;
+  padding-bottom:0.4vh;
+  word-wrap:break-word;
+  overflow-wrap:break-word;
 }
 
-/* Story Body */
+/* STORY BODY */
 .story{
   width:88%;
-  font-size:3.2vw;
+  font-size:3.1vw;
   line-height:1.5;
   text-align:justify;
-  overflow:auto;
-  margin-top:0.8vh;
+  margin-top:0.6vh;
   flex:1;
-  box-sizing:border-box;
-  padding-right:2vw;
+  overflow:auto;
   word-wrap:break-word;
+  hyphens:auto;
 }
 
-/* Photo Grid at Bottom */
-.photo-grid{
+/* BOTTOM 3 IMAGES — 3×4 portrait ratio */
+.photo-row{
   display:flex;
   justify-content:space-between;
   width:92%;
-  margin:1vh 0;
+  margin:1.2vh 0;
   gap:2%;
 }
 .small-photo{
   flex:1;
-  aspect-ratio:1/1;
+  aspect-ratio:3/4;
   background:#e6e6e6 center/cover no-repeat;
   border:0.25vh solid #333;
   border-radius:0.8vw;
   display:flex;
   align-items:center;
   justify-content:center;
-  color:#666;
+  color:#555;
   font-size:3vw;
   font-style:italic;
-  overflow:hidden;
   position:relative;
+  overflow:hidden;
 }
-.small-photo input[type=file]{
+.small-photo input[type=file]{position:absolute;bottom:1vh;left:1vh;opacity:0;width:30px;height:30px;}
+.zoom-range{
   position:absolute;
-  bottom:1vh;left:1vh;
-  opacity:0;width:30px;height:30px;
+  bottom:1vh;right:1vh;width:50px;
 }
 
-/* Footer */
+/* FOOTER */
 footer{
   width:100%;
   text-align:center;
   border-top:3px double #000;
-  font-size:2.8vw;
-  padding:0.8vh 0;
   background:#fff;
+  font-size:2.8vw;
+  padding:0.8vh 0 1vh;
 }
-footer a{
-  color:#000;text-decoration:none;border-bottom:0.15vh solid #000;
-}
+footer a{color:#000;text-decoration:none;border-bottom:0.15vh solid #000;}
 footer a:hover{color:#b58900;border-bottom-color:#b58900;}
-footer em{display:block;font-size:2.5vw;font-style:italic;margin-top:0.2vh;}
+footer em{display:block;font-size:2.5vw;font-style:italic;margin-top:0.3vh;}
 </style>
 </head>
 
@@ -148,39 +129,47 @@ footer em{display:block;font-size:2.5vw;font-style:italic;margin-top:0.2vh;}
     <p>FINAL CASTING DAY TWO • JAN 23 2026</p>
   </header>
 
-  <!-- Main Image -->
+  <!-- MAIN IMAGE -->
   <div class="main-img" id="mainImg" onclick="document.getElementById('mainFile').click()">
     Tap to Insert Main Photo
     <input type="file" id="mainFile" accept="image/*;capture=camera"
-           onchange="setImage(event,'mainImg')" />
+           onchange="setImage(event,'mainImg','mainZoom')">
+    <input type="range" min="1" max="2" step="0.01" value="1" id="mainZoom" class="slider"
+           onchange="zoomImage('mainImg','mainZoom')">
   </div>
 
-  <!-- Updated Headline -->
+  <!-- HEADLINE -->
   <h2>FINAL CASTING FOR MODELS HELD AT THE ATRIUM</h2>
 
-  <!-- Fixed Story Text Box -->
+  <!-- STORY -->
   <div class="story">
-    Day Two of Fashion Week Sacramento’s model castings took place at The Atrium, a 501(c)(3) nonprofit creative center for sustainability and innovation. Serving as a community incubator built on the ethos of “doing business for good,” The Atrium encourages collaboration among artists, entrepreneurs, and educators to build a kinder, more sustainable future. 
+    Day Two of Fashion Week Sacramento’s model castings was the final round for 2026, held at The Atrium — a 501(c)(3) nonprofit creative center for sustainability and innovation. As an incubator for “business for good,” The Atrium brings together artists, entrepreneurs, and educators to build a kind and sustainable future. 
     <br><br>
-    The venue houses classes, events, and art studios dedicated to social impact and sustainability. During the final casting, models of all backgrounds brought their talent and creativity to the runway call, marking the culmination of this season’s selection process. DMR Productions continues its mission of cultivating diverse voices and innovating toward an omni‑considerate future for Sacramento’s growing fashion community.
+    The venue houses classes, events, and art studios dedicated to collaboration and social impact. The final casting featured models from throughout California showcasing confidence and purpose as DMR Productions prepared for the upcoming runway season.
   </div>
 
-  <!-- 3 Bottom Photo Boxes -->
-  <div class="photo-grid">
+  <!-- 3 PORTRAIT BOTTOM IMAGES -->
+  <div class="photo-row">
     <div class="small-photo" id="p1" onclick="document.getElementById('f1').click()">
       +
       <input type="file" id="f1" accept="image/*;capture=camera"
-             onchange="setImage(event,'p1')" />
+             onchange="setImage(event,'p1','z1')">
+      <input type="range" min="1" max="2" step="0.01" value="1" id="z1"
+             class="zoom-range" onchange="zoomImage('p1','z1')">
     </div>
     <div class="small-photo" id="p2" onclick="document.getElementById('f2').click()">
       +
       <input type="file" id="f2" accept="image/*;capture=camera"
-             onchange="setImage(event,'p2')" />
+             onchange="setImage(event,'p2','z2')">
+      <input type="range" min="1" max="2" step="0.01" value="1" id="z2"
+             class="zoom-range" onchange="zoomImage('p2','z2')">
     </div>
     <div class="small-photo" id="p3" onclick="document.getElementById('f3').click()">
       +
       <input type="file" id="f3" accept="image/*;capture=camera"
-             onchange="setImage(event,'p3')" />
+             onchange="setImage(event,'p3','z3')">
+      <input type="range" min="1" max="2" step="0.01" value="1" id="z3"
+             class="zoom-range" onchange="zoomImage('p3','z3')">
     </div>
   </div>
 
@@ -190,21 +179,33 @@ footer em{display:block;font-size:2.5vw;font-style:italic;margin-top:0.2vh;}
       <a href="https://www.dmrproductions.online" target="_blank">www.dmrproductions.online</a> • 
       <a href="https://www.instagram.com/dmrprod" target="_blank">@dmrprod</a>
     </strong>
-    <em>Fashion Week Sacramento 2026 Mobile Edition</em>
+    <em>Fashion Week Sacramento 2026 Final Casting Edition</em>
   </footer>
 </div>
 
 <script>
-function setImage(e,id){
-  const div=document.getElementById(id);
+function setImage(e,boxId,zoomId){
+  const div=document.getElementById(boxId);
   const file=e.target.files[0];
   if(!file)return;
   const reader=new FileReader();
   reader.onload=x=>{
     div.style.backgroundImage=`url(${x.target.result})`;
+    div.style.backgroundSize='cover';
+    div.style.backgroundRepeat='no-repeat';
+    div.style.backgroundPosition='center';
     div.textContent="";
+    document.getElementById(zoomId).value=1; // reset zoom
+    div.style.transform='scale(1)';
   };
   reader.readAsDataURL(file);
+}
+
+function zoomImage(boxId,zoomId){
+  const div=document.getElementById(boxId);
+  const zoom=document.getElementById(zoomId).value;
+  div.style.transform=`scale(${zoom})`;
+  div.style.transformOrigin='center center';
 }
 </script>
 </body>
